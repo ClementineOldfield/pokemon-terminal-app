@@ -13,7 +13,7 @@ while playing
     fighting = true
     while fighting 
         puts "your pokemon is #{user_choice}"
-        puts "Attack?"
+        puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
             puts "attacked"
@@ -22,7 +22,7 @@ while playing
         end
     end
 
-    puts "would you like to play again?"
+    puts "would you like to play again? y/n"
     play_input = gets.chomp
 
     if play_input == "n"
