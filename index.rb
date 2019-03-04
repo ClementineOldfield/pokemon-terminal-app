@@ -7,6 +7,8 @@ class Pokemon
         @name = name 
         @type = type
     end
+
+    #TODO: Create method for attack. Basic functionality - prints: "attacks opponent"
 end
 
 #Declare multiple instances of pokemon class
@@ -28,9 +30,12 @@ while playing
     puts "please choose a pokemon"
     user_choice = gets.chomp
 
+    #TODO: add conditionals to assign the correct pokemon objects to the user.
+
     #Start fighting loop
     fighting = true
     while fighting 
+        #TODO: access the name from the user's pokemon object instead of a static variable.
         puts "your pokemon is #{user_choice}"
         puts "Attack? y/n"
         fight_input = gets.chomp
