@@ -18,7 +18,7 @@ stretch: As a user, I am able to save my progress and have my pokemon gain exper
 Its function is to have objects with values assigned to them and those values decreasing through each loop by the other object till eventually one object meets the conditions. 
 
 <!-- Instructions for use -->
-Shaahil: 
+Instructions for use: 
 =======
 
 Shaahil: Instructions for use
@@ -29,13 +29,33 @@ Shaahil:
 
 Design & Planning Process: 
 =======
+
+To begin writing the code for our app, we sketched out some quick pseudocode. We knew we would need at least one class and two loops. One loop to begin the game itself, and one loop to begin the fight. 
+
+Create 'Pokemon' class {
+
+    core attributes: name, type, hp, moves
+    stretch attributes: level, attack, defence, pp, speed, inventory
+
+    method: attack(opponent, move)
+
+    stretch - method: use_item(item)
+
+    stretch - method: level_up
+}
+
+
 Pseudocode of program 
 Explain different systems and how they were planned. 
 <!-- Evidence of app idea brainstorming sessions -->
 Shaaahil: Maze game mind map. details and design 
 <!-- app User/Workflow diagram -->
+User Workflow Diagram
+=======
 Shaahil: 3 user stories
 <!-- Project plan & timeline -->
+Project Plan & Timeline
+=======
 Clem:
 <!-- Screenshots of Trello board(s) -->
 Clem: 
