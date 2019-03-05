@@ -9,8 +9,6 @@ class Pokemon
         @type = type
     end
 
-    #TODO: Create method for attack. Basic functionality - prints: "attacks opponent"
-
     def attack 
         damage = rand 0..10
         if damage >= 8 
@@ -26,26 +24,29 @@ class Pokemon
         puts "#{@hp} / #{@max_hp} HP"
     end
 
+    def reset_health
+        @hp = @max_hp
+    end
+
 end
 
 #Declare multiple instances of pokemon class
 pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20)
 
-p "You've picked #{pikachu.name}! He's an #{pikachu.type} type."
-p "Base stats: #{pikachu.attack} damage and #{pikachu.hp} HP"
 
 magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
-
-p "You've picked #{magikarp.name}! He's a #{magikarp.type} type."
-p "Base stats: #{magikarp.attack} damage and #{magikarp.hp} HP"
-
-
     
 playing = true
 while playing
-    system("clear")
     puts "please choose a pokemon"
-    user_choice = gets.chomp
+    user_choice = gets.chomp.capitalize
+    if user_choice == "Pikachu"
+        user = pikachu
+    elsif user_choice == "Magikarp"
+        user = magikarp
+    else 
+        puts "That's not a valid option"
+    end
 
     #TODO: add conditionals to assign the correct pokemon objects to the user.
 
@@ -53,15 +54,20 @@ while playing
     fighting = true
     while fighting 
         #TODO: access the name from the user's pokemon object instead of a static variable.
-        puts "your pokemon is #{user_choice}"
+        puts "your pokemon is #{user.name}"
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
-            pikachu.attack
-            puts "attacked"
+            user.attack
+            if user.hp <= 0 
+                fighting = false 
+                user.reset_health
+            end 
         elsif fight_input == "n"
             fighting = false
+            user.reset_health
         end
+
     end #End fighting loop
 
     puts "would you like to play again? y/n"
