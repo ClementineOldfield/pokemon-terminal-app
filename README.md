@@ -12,6 +12,10 @@ The purpose of the program is to simulate a battle between pokemon until one los
 Its function is to have objects with values assigned to them and those values decreasing through each loop by the other object till eventually one object meets the conditions. 
 <!-- Instructions for use -->
 Shaahil: 
+=======
+
+Shaahil: Instructions for use
+
 <!-- Screenshots -->
 Shaahil: 
 <!-- Details of design & planning process including, -->
@@ -25,3 +29,23 @@ Shaahil: 3 user stories
 Clem:
 <!-- Screenshots of Trello board(s) -->
 Clem: 
+
+
+<!-- Evidence of app idea brainstorming sessions -->
+
+Clem: nutrition tracker mind map. Handdrawn or digital drawing
+
+
+<!-- app User/Workflow diagram -->
+
+3 user stories each. 
+
+<!-- Project plan & timeline -->
+
+Clem: project plan & timeline. 
+
+
+<!-- Screenshots of Trello board(s) -->
+
+
+Clem: societal impact statement.
