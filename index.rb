@@ -1,10 +1,10 @@
-
+#Define class for all moves used by pokemon
 class Move
-    attr_accessor :name, :damage, :type
+    attr_accessor :name, :power, :type
 
-    def initialize(name, damage, type)
+    def initialize(name, power, type)
         @name = name
-        @damage = damage
+        @power = power
         @type = type
     end
 end
