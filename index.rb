@@ -1,6 +1,8 @@
 #Create pokemon class. TODO: move to other file and import here.
 class Pokemon 
-    attr_accessor :attack, :hp, :name, :type
+    attr_accessor :hp 
+    attr_reader :max_hp, :name
+
     def initialize (name, type, attack, health)
         @attack = attack 
         @hp = health 
@@ -9,7 +11,7 @@ class Pokemon
         @type = type
     end
 
-    def attack 
+    def attack(opponent)
         damage = rand 0..10
         if damage >= 8 
             puts "Critical hit! Opponent took #{damage} damage."
@@ -20,8 +22,8 @@ class Pokemon
         else 
             puts "Opponent took #{damage} damage."
         end
-        @hp = @hp - damage
-        puts "#{@hp} / #{@max_hp} HP"
+        opponent.hp = opponent.hp - damage
+        puts "#{opponent.name} has #{opponent.hp} / #{opponent.max_hp} HP"
         
     end
 
@@ -33,8 +35,6 @@ end
 
 
 pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20)
-
-
 magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
     
 playing = true
@@ -66,14 +66,22 @@ while playing
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
-            user.attack
+            user.attack(opponent)
+            if opponent.hp <= 0 
+                fighting = false 
+                user.reset_health
+                opponent.reset_health
+            end 
+            opponent.attack(user)
             if user.hp <= 0 
                 fighting = false 
                 user.reset_health
+                opponent.reset_health
             end 
         elsif fight_input == "n"
             fighting = false
             user.reset_health
+            opponent.reset_health
         end
 
     end #End fighting loop
