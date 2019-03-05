@@ -69,22 +69,25 @@ while playing
             user.attack(opponent)
             if opponent.hp <= 0 
                 fighting = false 
-                user.reset_health
-                opponent.reset_health
+            
             end 
             opponent.attack(user)
             if user.hp <= 0 
                 fighting = false 
-                user.reset_health
-                opponent.reset_health
+                
             end 
         elsif fight_input == "n"
             fighting = false
-            user.reset_health
-            opponent.reset_health
+        
         end
 
-    end #End fighting loop
+    end 
+
+    if user.hp > 0 
+        p "You win!!!"
+    else user.hp <= 0 
+        p "You lose!!!"
+    end
 
     puts "would you like to play again? y/n"
     play_input = gets.chomp
