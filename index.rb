@@ -100,7 +100,6 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
     puts "<Press enter to continue>"
     continue = gets
-    puts pikachu.move1.name
 
     choosing = true
     while choosing
@@ -158,7 +157,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             puts "<Press enter to continue>"
             continue = gets
             
-                opponent.attack(user)
+            opponent.attack(user, user.move1)
 
             puts "<Press enter to continue>"
             continue = gets
@@ -167,7 +166,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
                 fighting = false
             end 
         elsif fight_input == "n"
-            opponent.attack(user)
+            opponent.attack(user, user.move1)
             puts "<Press enter to continue>"
             continue = gets
             if user.hp <= 0 || opponent.hp <= 0 
