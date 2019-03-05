@@ -41,16 +41,41 @@ class Pokemon
     end
 end
 
+def display_stats(user,opponent)
+    puts "#{user.name} (you) has #{user.hp} health"
+    puts "#{opponent.name} has #{opponent.hp} health"
+end
 
-pikachu = Pokemon.new("Pikachu", "Electric", rand(5..10), 18)
-magikarp = Pokemon.new("Magikarp", "Water", rand(1..4), 23)
+pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20)
+magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
+charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50)
     
 playing = true
 while playing
+
     Pokemon.reset_hp
+    system("clear")
+
+    puts "
+    _.----.         ____         ,'  _\   ___    ___     ____      
+_,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`. 
+\\      __    \     '-.  | /   `.  ___    |    \\/    |   '-.   \\ |  |
+ \\.    \\ \\   |  __  |  |/    ,','_  `.  |          | __  |    \\|  |
+   \\    \\/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |
+    \\     ,-'/  /   \\    ,'   | \/ / ,`.|         /  /   \  |     |
+     \\    \\ |   \_/  |   `-.  \\    `'  /|  |    ||   \\_/  | |\\    |
+      \\    \\ \\      /       `-.`.___,-' |  |\\  /| \\      /  | |   |
+       \\    \\ `.__,'|  |`-._    `|      |__| \\/ |  `.__,'|  | |   |
+        \\_.-'       |__|    `-._ |              '-.|     '-.| |   |
+                                `'                            '-._|"
+
+    puts "<press enter to continue>"
+    continue = gets
     
     choosing = true
     while choosing
+        system("clear")
+
         puts "please choose a pokemon"
         user_choice = gets.chomp.capitalize
         if user_choice == "Pikachu"
@@ -66,12 +91,18 @@ while playing
         end
     end 
 
+    #TODO: add conditionals to assign the correct pokemon objects to the user.
     puts "#{user_choice} I choose you!"
     puts "your opponent is #{opponent.name}"
-    
+
+    puts "<press enter to continue>"
+    continue = gets
+
+    #Start fighting loop
     fighting = true
     while fighting 
-
+        system("clear")
+        display_stats(user,opponent)
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
@@ -80,6 +111,10 @@ while playing
                 fighting = false 
             end 
             opponent.attack(user)
+
+            puts "<press enter to continue>"
+            continue = gets
+
             if user.hp <= 0 
                 fighting = false 
             end 
@@ -101,4 +136,5 @@ while playing
     if play_input == "n"
         playing = false
     end 
-end 
+
+end #End playing loop
