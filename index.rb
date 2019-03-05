@@ -87,11 +87,16 @@ body_slam = Move.new("Body Slam", 2, "Normal")
 
 #Instantiates all pokemon to be used in the game
 #TODO: Give each pokemon meaningful stats and unique moves.
+
+mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100, tackle, electric_shock, growl, body_slam)
 pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
 magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
 charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50, tackle, electric_shock, growl, body_slam)
-mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100, tackle, electric_shock, growl, body_slam)
 
+def enter_continue
+    puts "<Press enter to continue>"
+    continue = gets
+end
 
 playing = true
 while playing
@@ -114,14 +119,22 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
 
     
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
-    puts "<Press enter to continue>"
-    continue = gets
+    enter_continue
 
     choosing = true
     while choosing
         system("clear")
 
-        puts "Please choose a pokemon. \nFor options, type 'options'"
+        puts "Please choose a pokemon."
+        puts "Options:"
+        
+        Pokemon.pokemon.to_a.each do |pokemon|
+            if pokemon.name != "Mewtwo" && pokemon.name != Pokemon.pokemon[Pokemon.pokemon.length-1].name
+                print "#{pokemon.name}, "
+            elsif pokemon.name == Pokemon.pokemon[Pokemon.pokemon.length-1].name
+                print "or #{pokemon.name}.\n"
+            end
+        end
 
         user_choice = gets.chomp.capitalize
         if user_choice == "Pikachu"
@@ -136,15 +149,6 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             user = charizard
             opponent = mewtwo
             choosing = false
-        elsif user_choice == "Options"
-            puts "Options:"
-            Pokemon.pokemon.to_a.each do |pokemon|
-                unless pokemon.name == "Mewtwo"
-                    puts pokemon.name
-                end
-            end
-            puts "<press enter to continue>"
-        continue = gets
         else 
             puts "That's not a valid option"
         end
@@ -154,14 +158,17 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "#{user_choice}, I choose you!"
     puts "Your opponent is #{opponent.name}"
 
-    puts "<Press enter to continue>"
-    continue = gets
+    enter_continue
 
     #Start fighting loop
     fighting = true
     while fighting 
         system("clear")
+
+        #TODO: Create a move user friendly display for stats/pokemon
         display_stats(user,opponent)
+
+        #TODO: Give user the option of choosing their attack move
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
@@ -172,14 +179,12 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
                 fighting = false 
             end 
 
-            puts "<Press enter to continue>"
-            continue = gets
-        
+            enter_continue
+           
             #TODO: Opponent uses random attack instead of set.
             opponent.attack(user, user.move1)
 
-            puts "<Press enter to continue>"
-            continue = gets
+            enter_continue
 
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
@@ -187,8 +192,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
         elsif fight_input == "n"
 
             opponent.attack(user, user.move1)
-            puts "<Press enter to continue>"
-            continue = gets
+            enter_continue
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end    
