@@ -14,14 +14,26 @@ Purpose -->
 
 <!-- Instructions for use -->
 
+Shaahil: Instructions for use
+
 <!-- Screenshots -->
 
 <!-- Details of design & planning process including, -->
 
+
 <!-- Evidence of app idea brainstorming sessions -->
+
+Clem: nutrition tracker mind map. Handdrawn or digital drawing
 
 <!-- app User/Workflow diagram -->
 
+3 user stories each. 
+
 <!-- Project plan & timeline -->
 
+Clem: project plan & timeline. 
+
 <!-- Screenshots of Trello board(s) -->
+
+
+Clem: societal impact statement.
