@@ -1,7 +1,7 @@
 # pokemon-terminal-app
 <!-- 
 A link to your GitHub repository
-Ensure the repository (repo) is accessible by your Educators -->
+TODO:: Ensure the repository (repo) is accessible by your Educators -->
 https://github.com/ClementineOldfield/pokemon-terminal-app
 
 
@@ -19,6 +19,9 @@ Shaahil: Instructions for use
 <!-- Screenshots -->
 Shaahil: 
 <!-- Details of design & planning process including, -->
+
+Design & Planning Process: 
+=======
 Pseudocode of program 
 Explain different systems and how they were planned. 
 <!-- Evidence of app idea brainstorming sessions -->
@@ -50,3 +53,7 @@ Clem: project plan & timeline.
 
 Societal Impact
 ===============
+
+Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. 
+
+To implement this, there would be a 
