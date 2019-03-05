@@ -161,7 +161,11 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     fighting = true
     while fighting 
         system("clear")
+
+        #TODO: Create a move user friendly display for stats/pokemon
         display_stats(user,opponent)
+
+        #TODO: Give user the option of choosing their attack move
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
@@ -170,22 +174,19 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
                 fighting = false 
             end 
 
-            puts "<Press enter to continue>"
-            continue = gets
+            enter_continue
             
             #TODO: Opponent uses random attack instead of set.
             opponent.attack(user, user.move1)
 
-            puts "<Press enter to continue>"
-            continue = gets
+            enter_continue
 
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end 
         elsif fight_input == "n"
             opponent.attack(user, user.move1)
-            puts "<Press enter to continue>"
-            continue = gets
+            enter_continue
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end    
