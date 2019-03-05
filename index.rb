@@ -42,8 +42,8 @@ class Pokemon
 end
 
 
-pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20)
-magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
+pikachu = Pokemon.new("Pikachu", "Electric", rand(5..10), 18)
+magikarp = Pokemon.new("Magikarp", "Water", rand(1..4), 23)
     
 playing = true
 while playing
@@ -66,13 +66,12 @@ while playing
         end
     end 
 
-    #TODO: add conditionals to assign the correct pokemon objects to the user.
-
-    #Start fighting loop
+    puts "#{user_choice} I choose you!"
+    puts "your opponent is #{opponent.name}"
+    
     fighting = true
     while fighting 
-        puts "#{user_choice} I choose you!"
-        puts "your opponent is #{opponent.name}"
+
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
@@ -89,11 +88,17 @@ while playing
 
         end
 
-    end #End fighting loop
+    end 
+
+    if user.hp > 0 
+        p "You win!!!"
+    else 
+        p "You lose!!!"
+    end
 
     puts "would you like to play again? y/n"
     play_input = gets.chomp
     if play_input == "n"
         playing = false
     end 
-end #End playing loop
+end 
