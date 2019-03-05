@@ -154,7 +154,6 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             if opponent.hp <= 0 
                 fighting = false 
             end 
-            opponent.attack(user, user.move1)
 
             puts "<Press enter to continue>"
             continue = gets
