@@ -38,6 +38,27 @@ Shaahil: Instructions for use
 Shaahil: 
 <!-- Details of design & planning process including, -->
 
+Project Plan & Timeline
+=======
+
+With such a short time to complete this project, our timeline had to be condensed. 
+
+Day 1 (Day 1 was technically only a half day as we were given our design brief in the afternoon. )
+----
+- Brainstorming and Ideation. 
+- Narrow down to three ideas. Explore each of the three ideas in more depth. Decide on a final idea & get green lit.
+
+Day 2
+----
+
+- Create user workflow diagram
+- Write basic pseudocode
+
+Day 3
+---
+- App development.
+- Adjusting scope of app to meet deadline.
+
 Design & Planning Process: 
 =======
 
@@ -135,24 +156,6 @@ User Workflow Diagram
 
 Shaahil: 3 user stories
 <!-- Project plan & timeline -->
-Project Plan & Timeline
-=======
-
-With such a short time to complete this project, our timeline had to be condensed. 
-
-Day 1 (Day 1 was technically only a half day as we were given our design brief in the afternoon. )
-----
-- Brainstorming and Ideation. 
-
-- Narrow down to three ideas. Explore each of the three ideas in more depth. Decide on a final idea get approval.
-
-Day 2
-----
-
-
-Day 3
----
-App Development
 
 <!-- Screenshots of Trello board(s) -->
 
