@@ -65,15 +65,29 @@ Shaaahil: Maze game mind map. details and design
 <!-- app User/Workflow diagram -->
 User Workflow Diagram
 =======
+
+![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
+
 Shaahil: 3 user stories
 <!-- Project plan & timeline -->
 Project Plan & Timeline
 =======
 
-Our project plan & timeline
+With such a short time to complete this project, our timeline had to be condensed. 
+
+Day 1
+----
+Brainstorming and Ideation. Day 1 was technically only a half day as we were given our design brief in the afternoon. 
+
+Day 2
+----
+
+
+Day 3
+---
+App Development
 
 <!-- Screenshots of Trello board(s) -->
-![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
 
 
 <!-- Evidence of app idea brainstorming sessions -->
