@@ -3,34 +3,42 @@ class Pokemon
     attr_accessor :hp 
     attr_reader :max_hp, :name
 
-    def initialize (name, type, attack, health)
+    @pokemon = []
+
+    def initialize (name, type, attack, hp)
         @attack = attack 
-        @hp = health 
-        @max_hp = health
+        @hp = hp 
+        @max_hp = hp
         @name = name 
         @type = type
+        self.class.pokemon.push(self)
     end
 
     def attack(opponent)
         damage = rand 0..10
         if damage >= 8 
-            puts "Critical hit! Opponent took #{damage} damage."
+            puts "Critical hit! #{opponent.name} took #{damage} damage."
         elsif damage <= 2 && damage >= 1
-            puts "Not very effective. Opponent took #{damage} damage."
+            puts "Not very effective. #{opponent.name} took #{damage} damage."
         elsif damage == 0
-            puts "No effect. Opponent took #{damage} damage."
+            puts "No effect. #{opponent.name} took #{damage} damage."
         else 
-            puts "Opponent took #{damage} damage."
+            puts "#{opponent.name} took #{damage} damage."
         end
         opponent.hp = opponent.hp - damage
         puts "#{opponent.name} has #{opponent.hp} / #{opponent.max_hp} HP"
         
     end
 
-    def reset_health
-        @hp = @max_hp
-    end
+    class << self
+        attr_accessor :pokemon
 
+        def reset_hp
+            @pokemon.each do |pokemon|
+                pokemon.hp = pokemon.max_hp
+            end
+        end
+    end
 end
 
 
@@ -39,6 +47,8 @@ magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
     
 playing = true
 while playing
+    Pokemon.reset_hp
+    
     choosing = true
     while choosing
         puts "please choose a pokemon"
@@ -69,26 +79,20 @@ while playing
             user.attack(opponent)
             if opponent.hp <= 0 
                 fighting = false 
-                user.reset_health
-                opponent.reset_health
             end 
             opponent.attack(user)
             if user.hp <= 0 
                 fighting = false 
-                user.reset_health
-                opponent.reset_health
             end 
         elsif fight_input == "n"
             fighting = false
-            user.reset_health
-            opponent.reset_health
+
         end
 
     end #End fighting loop
 
     puts "would you like to play again? y/n"
     play_input = gets.chomp
-
     if play_input == "n"
         playing = false
     end 
