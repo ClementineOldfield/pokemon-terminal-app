@@ -43,8 +43,8 @@ Project Plan & Timeline
 
 With such a short time to complete this project, our timeline had to be condensed. 
 
-Day 1 (Day 1 was technically only a half day as we were given our design brief in the afternoon. )
-----
+### Day 1 (Day 1 was technically only a half day as we were given our design brief in the afternoon. )
+
 - Brainstorming and Ideation. 
 - Narrow down to three ideas. Explore each of the three ideas in more depth. Decide on a final idea & get green lit.
 
