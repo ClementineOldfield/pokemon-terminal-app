@@ -123,7 +123,13 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
 
         end
 
-    end #End fighting loop
+    end 
+
+    if user.hp > 0 
+        p "You win!!!"
+    else 
+        p "You lose!!!"
+    end
 
     puts "would you like to play again? y/n"
     play_input = gets.chomp
