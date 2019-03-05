@@ -1,4 +1,8 @@
-# pokemon-terminal-app
+Terminal App (A1-1).
+========
+By Clementine Oldfieled & Shaahil Chaand. 2019.
+-----
+
 <!-- 
 A link to your GitHub repository
 TODO:: Ensure the repository (repo) is accessible by your Educators -->
