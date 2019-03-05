@@ -12,6 +12,11 @@ Purpose -->
 
 <!-- Functionality -->
 
+User stories:
+
+As a user, I am able to choose a pokemon and take part in battles with other pokemon.
+stretch: As a user, I am able to save my progress and have my pokemon gain experience from battles
+
 <!-- Instructions for use -->
 
 Shaahil: Instructions for use
@@ -24,6 +29,7 @@ Shaahil: Instructions for use
 <!-- Evidence of app idea brainstorming sessions -->
 
 Clem: nutrition tracker mind map. Handdrawn or digital drawing
+=======
 
 <!-- app User/Workflow diagram -->
 
@@ -32,6 +38,8 @@ Clem: nutrition tracker mind map. Handdrawn or digital drawing
 <!-- Project plan & timeline -->
 
 Clem: project plan & timeline. 
+=======
+
 
 <!-- Screenshots of Trello board(s) -->
 

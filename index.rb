@@ -1,7 +1,17 @@
-#Create pokemon class. TODO: move to other file and import here.
+
+class Move
+
+    @moves = []
+    def initialize(name, damage)
+        
+    end
+end
+
+tackle = Move.new("tackle", 1)
+
 class Pokemon 
     attr_accessor :hp 
-    attr_reader :max_hp, :name
+    attr_reader :max_hp, :name, :moves
 
     @pokemon = []
 
@@ -11,12 +21,16 @@ class Pokemon
         @max_hp = hp
         @name = name 
         @type = type
+        @moves = { tackle: 1 }
         self.class.pokemon.push(self)
     end
-
+  
     def attack(opponent)
+
+        puts "#{name} attacks!"
         damage = rand 0..10
         if damage >= 8 
+            puts "#{@name} used "
             puts "Critical hit! #{opponent.name} took #{damage} damage."
         elsif damage <= 2 && damage >= 1
             puts "Not very effective. #{opponent.name} took #{damage} damage."
@@ -49,7 +63,9 @@ end
 pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20)
 magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
 charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50)
+mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100)
     
+
 playing = true
 while playing
 
@@ -71,14 +87,15 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
 
     
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
-    puts "<press enter to continue>"
+    puts "<Press enter to continue>"
     continue = gets
     
     choosing = true
     while choosing
         system("clear")
 
-        puts "please choose a pokemon"
+        puts "Please choose a pokemon. \nFor options, type 'options'"
+      
         user_choice = gets.chomp.capitalize
         if user_choice == "Pikachu"
             user = pikachu
@@ -88,16 +105,29 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             user = magikarp
             opponent = pikachu
             choosing = false 
+        elsif user_choice == "Charizard"
+            user = charizard
+            opponent = mewtwo
+            choosing = false
+        elsif user_choice == "Options"
+            puts "Options:"
+            Pokemon.pokemon.to_a.each do |pokemon|
+                unless pokemon.name == "Mewtwo"
+                    puts pokemon.name
+                end
+            end
+            puts "<press enter to continue>"
+        continue = gets
         else 
             puts "That's not a valid option"
         end
     end 
 
     #TODO: add conditionals to assign the correct pokemon objects to the user.
-    puts "#{user_choice} I choose you!"
-    puts "your opponent is #{opponent.name}"
+    puts "#{user_choice}, I choose you!"
+    puts "Your opponent is #{opponent.name}"
 
-    puts "<press enter to continue>"
+    puts "<Press enter to continue>"
     continue = gets
 
     #Start fighting loop
@@ -108,35 +138,45 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
-            user.attack(opponent)
+            user.attack(opponent, user.moves[:tackle])
             if opponent.hp <= 0 
                 fighting = false 
             end 
-            opponent.attack(user)
 
-            puts "<press enter to continue>"
+            puts "<Press enter to continue>"
+            continue = gets
+            
+                opponent.attack(user)
+
+            puts "<Press enter to continue>"
             continue = gets
 
-            if user.hp <= 0 
-                fighting = false 
+            if user.hp <= 0 || opponent.hp <= 0 
+                fighting = false
             end 
         elsif fight_input == "n"
-            fighting = false
-
+            opponent.attack(user)
+            puts "<Press enter to continue>"
+            continue = gets
+            if user.hp <= 0 || opponent.hp <= 0 
+                fighting = false
+            end    
         end
 
     end 
 
-    if user.hp > 0 
+    if user.hp > 0 && opponent.hp <= 0 
         p "You win!!!"
-    else 
+    else  
         p "You lose!!!"
     end
 
-    puts "would you like to play again? y/n"
+    puts "Would you like to play again? y/n"
     play_input = gets.chomp
     if play_input == "n"
+        p "Thank you for playing!"
         playing = false
     end 
 
 end #End playing loop
+
