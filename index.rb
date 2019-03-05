@@ -1,34 +1,44 @@
 
 class Move
+    attr_accessor :name, :damage, :type
 
-    @moves = []
-    def initialize(name, damage)
-        
+    def initialize(name, damage, type)
+        @name = name
+        @damage = damage
+        @type = type
     end
 end
 
-tackle = Move.new("tackle", 1)
+tackle = Move.new("tackle", 1, "Normal")
+electric_shock = Move.new("Electric Shock", 3, "Electric")
+growl = Move.new("Growl", 0, "Normal")
+body_slam = Move.new("Body Slam", 2, "Normal")
 
 class Pokemon 
     attr_accessor :hp 
-    attr_reader :max_hp, :name, :moves
+    attr_reader :max_hp, :name, :move1, :move2, :move3, :move4
 
     @pokemon = []
 
-    def initialize (name, type, attack, hp)
+    def initialize (name, type, attack, hp, move1, move2, move3, move4)
         @attack = attack 
         @hp = hp 
         @max_hp = hp
         @name = name 
         @type = type
-        @moves = { tackle: 1 }
+        @move1 = move1
+        @move2 = move2
+        @move3 = move3
+        @move4 = move4
+        
         self.class.pokemon.push(self)
     end
-  
-    def attack(opponent)
 
-        puts "#{name} attacks!"
-        damage = rand 0..10
+    def attack(opponent, move)
+        damage = rand 0..10 * move.damage
+
+        puts "#{@name} used #{move.name}"
+
         if damage >= 8 
             puts "#{@name} used "
             puts "Critical hit! #{opponent.name} took #{damage} damage."
@@ -60,11 +70,12 @@ def display_stats(user,opponent)
     puts "#{opponent.name} has #{opponent.hp} health"
 end
 
-pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20)
-magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
-charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50)
-mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100)
-    
+
+pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
+magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
+charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50, tackle, electric_shock, growl, body_slam)
+mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100, tackle, electric_shock, growl, body_slam)
+
 
 playing = true
 while playing
@@ -89,13 +100,14 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
     puts "<Press enter to continue>"
     continue = gets
-    
+    puts pikachu.move1.name
+
     choosing = true
     while choosing
         system("clear")
 
         puts "Please choose a pokemon. \nFor options, type 'options'"
-      
+
         user_choice = gets.chomp.capitalize
         if user_choice == "Pikachu"
             user = pikachu
@@ -138,10 +150,11 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
-            user.attack(opponent, user.moves[:tackle])
+            user.attack(opponent, user.move1)
             if opponent.hp <= 0 
                 fighting = false 
             end 
+            opponent.attack(user, user.move1)
 
             puts "<Press enter to continue>"
             continue = gets
