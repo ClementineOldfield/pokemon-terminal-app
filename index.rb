@@ -36,7 +36,6 @@ pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20)
 
 
 magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20)
-
     
 playing = true
 while playing
