@@ -1,6 +1,6 @@
 Terminal App (A1-1).
 ========
-By Clementine Oldfieled & Shaahil Chaand. February, 2019.
+By Clementine Oldfield & Shaahil Chaand. February, 2019.
 -----
 
 <!-- 
@@ -13,7 +13,7 @@ Design Brief
 
     In groups of 2 create a Ruby terminal application (app).
     It can be something to entertain, to surprise, to solve a problem, to inform, to compute, etc.
-    
+
 <!-- Description of the app, including:
 Purpose -->
 The purpose of the program is to simulate a battle between pokemon until one loses by reaching zero health after loops of attacks from victorious opponent. 
