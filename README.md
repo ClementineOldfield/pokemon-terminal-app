@@ -73,7 +73,7 @@ Project Plan & Timeline
 Our project plan & timeline
 
 <!-- Screenshots of Trello board(s) -->
-
+![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
 
 
 <!-- Evidence of app idea brainstorming sessions -->
