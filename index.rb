@@ -1,3 +1,4 @@
+
 #Defines class for all moves used by pokemon
 #TODO: Move classes to new files
 class Move
@@ -25,6 +26,7 @@ class Pokemon
         @name = name 
         @type = type
 
+
         #TODO: refactor moves to be an array instead of four individual variables
         @move1 = move1
         @move2 = move2
@@ -45,6 +47,7 @@ class Pokemon
         puts "#{@name} used #{move.name}"
 
         if damage >= 8 
+            puts "#{@name} used "
             puts "Critical hit! #{opponent.name} took #{damage} damage."
         elsif damage <= 2 && damage >= 1
             puts "Not very effective. #{opponent.name} took #{damage} damage."
@@ -171,13 +174,15 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
         puts "Attack? y/n"
         fight_input = gets.chomp
         if fight_input == "y"
+
             user.attack(opponent, user.move1)
+
             if opponent.hp <= 0 
                 fighting = false 
             end 
 
             enter_continue
-            
+           
             #TODO: Opponent uses random attack instead of set.
             opponent.attack(user, user.move1)
 
@@ -187,6 +192,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
                 fighting = false
             end 
         elsif fight_input == "n"
+
             opponent.attack(user, user.move1)
             enter_continue
             if user.hp <= 0 || opponent.hp <= 0 
