@@ -153,17 +153,25 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             if opponent.hp <= 0 
                 fighting = false 
             end 
-            opponent.attack(user, user.move1)
 
-            puts "<press enter to continue>"
+            puts "<Press enter to continue>"
+            continue = gets
+            
+                opponent.attack(user, user.move1)
+
+            puts "<Press enter to continue>"
             continue = gets
 
             if user.hp <= 0 
                 fighting = false 
             end 
         elsif fight_input == "n"
-            fighting = false
-
+            opponent.attack(user, user.move1)
+            puts "<Press enter to continue>"
+            continue = gets
+            if user.hp <= 0 || opponent.hp <= 0 
+                fighting = false
+            end    
         end
 
     end 
