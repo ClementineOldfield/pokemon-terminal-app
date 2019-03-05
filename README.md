@@ -12,6 +12,11 @@ Purpose -->
 
 <!-- Functionality -->
 
+User stories:
+
+As a user, I am able to choose a pokemon and take part in battles with other pokemon.
+stretch: As a user, I am able to save my progress and have my pokemon gain experience from battles
+
 <!-- Instructions for use -->
 
 <!-- Screenshots -->
@@ -20,8 +25,12 @@ Purpose -->
 
 <!-- Evidence of app idea brainstorming sessions -->
 
+
+
 <!-- app User/Workflow diagram -->
 
 <!-- Project plan & timeline -->
+
+
 
 <!-- Screenshots of Trello board(s) -->
