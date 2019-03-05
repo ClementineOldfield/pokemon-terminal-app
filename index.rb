@@ -1,4 +1,5 @@
-#Define class for all moves used by pokemon
+#Defines class for all moves used by pokemon
+#TODO: Move classes to new files
 class Move
     attr_accessor :name, :power, :type
 
@@ -9,15 +10,12 @@ class Move
     end
 end
 
-tackle = Move.new("tackle", 1, "Normal")
-electric_shock = Move.new("Electric Shock", 3, "Electric")
-growl = Move.new("Growl", 0, "Normal")
-body_slam = Move.new("Body Slam", 2, "Normal")
-
+#Defines Pokemon class
 class Pokemon 
     attr_accessor :hp 
     attr_reader :max_hp, :name, :move1, :move2, :move3, :move4
 
+    #Defines empty array of pokemon to be filled as each pokemon instance is initialized
     @pokemon = []
 
     def initialize (name, type, attack, hp, move1, move2, move3, move4)
@@ -26,21 +24,27 @@ class Pokemon
         @max_hp = hp
         @name = name 
         @type = type
+
+        #TODO: refactor moves to be an array instead of four individual variables
         @move1 = move1
         @move2 = move2
         @move3 = move3
         @move4 = move4
         
+        #Pushes self to pokemon array above
         self.class.pokemon.push(self)
     end
 
     def attack(opponent, move)
-        damage = rand 0..10 * move.damage
+        #TODO: Incorporate pokemon stats & unique moves into the damage system.
+        #TODO: Incorporate pokemon types into the damage system
+        #TODO: Incorporate critical hits into the damage system
+
+        damage = rand 0..10 * move.power
 
         puts "#{@name} used #{move.name}"
 
         if damage >= 8 
-            puts "#{@name} used "
             puts "Critical hit! #{opponent.name} took #{damage} damage."
         elsif damage <= 2 && damage >= 1
             puts "Not very effective. #{opponent.name} took #{damage} damage."
@@ -57,6 +61,7 @@ class Pokemon
     class << self
         attr_accessor :pokemon
 
+        #Resets the HP of all pokemon that have been instantiated to max HP
         def reset_hp
             @pokemon.each do |pokemon|
                 pokemon.hp = pokemon.max_hp
@@ -70,7 +75,15 @@ def display_stats(user,opponent)
     puts "#{opponent.name} has #{opponent.hp} health"
 end
 
+#Instantiates all moves to be used by pokemon
+#TODO: Create unique moves for each pokemon
+tackle = Move.new("tackle", 1, "Normal")
+electric_shock = Move.new("Electric Shock", 3, "Electric")
+growl = Move.new("Growl", 0, "Normal")
+body_slam = Move.new("Body Slam", 2, "Normal")
 
+#Instantiates all pokemon to be used in the game
+#TODO: Give each pokemon meaningful stats and unique moves.
 pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
 magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
 charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50, tackle, electric_shock, growl, body_slam)
@@ -157,6 +170,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             puts "<Press enter to continue>"
             continue = gets
             
+            #TODO: Opponent uses random attack instead of set.
             opponent.attack(user, user.move1)
 
             puts "<Press enter to continue>"
