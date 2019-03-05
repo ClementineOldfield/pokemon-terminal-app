@@ -15,6 +15,8 @@ class Pokemon
     end
 
     def attack(opponent)
+
+        puts "#{name} attacks!"
         damage = rand 0..10
         if damage >= 8 
             puts "Critical hit! #{opponent.name} took #{damage} damage."
@@ -71,14 +73,14 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
 
     
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
-    puts "<press enter to continue>"
+    puts "<Press enter to continue>"
     continue = gets
     
     choosing = true
     while choosing
         system("clear")
 
-        puts "please choose a pokemon"
+        puts "Please choose a Pokemon"
         user_choice = gets.chomp.capitalize
         if user_choice == "Pikachu"
             user = pikachu
@@ -94,10 +96,10 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     end 
 
     #TODO: add conditionals to assign the correct pokemon objects to the user.
-    puts "#{user_choice} I choose you!"
-    puts "your opponent is #{opponent.name}"
+    puts "#{user_choice}, I choose you!"
+    puts "Your opponent is #{opponent.name}"
 
-    puts "<press enter to continue>"
+    puts "<Press enter to continue>"
     continue = gets
 
     #Start fighting loop
@@ -112,30 +114,38 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             if opponent.hp <= 0 
                 fighting = false 
             end 
-            opponent.attack(user)
+            puts "<Press enter to continue>"
+            continue = gets
+            
+                opponent.attack(user)
 
-            puts "<press enter to continue>"
+            puts "<Press enter to continue>"
             continue = gets
 
-            if user.hp <= 0 
-                fighting = false 
+            if user.hp <= 0 || opponent.hp <= 0 
+                fighting = false
             end 
         elsif fight_input == "n"
-            fighting = false
-
+            opponent.attack(user)
+            puts "<Press enter to continue>"
+            continue = gets
+            if user.hp <= 0 || opponent.hp <= 0 
+                fighting = false
+            end    
         end
 
     end 
 
-    if user.hp > 0 
+    if user.hp > 0 && opponent.hp <= 0 
         p "You win!!!"
-    else 
+    else  
         p "You lose!!!"
     end
 
-    puts "would you like to play again? y/n"
+    puts "Would you like to play again? y/n"
     play_input = gets.chomp
     if play_input == "n"
+        p "Thank you for playing!"
         playing = false
     end 
 
