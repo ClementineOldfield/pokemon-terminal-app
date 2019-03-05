@@ -1,10 +1,12 @@
 
+#Defines class for all moves used by pokemon
+#TODO: Move classes to new files
 class Move
-    attr_accessor :name, :damage, :type
+    attr_accessor :name, :power, :type
 
-    def initialize(name, damage, type)
+    def initialize(name, power, type)
         @name = name
-        @damage = damage
+        @power = power
         @type = type
     end
 end
@@ -18,10 +20,12 @@ leaf_blade = Move.new("Leaf Balde", rand(2..6), "Grass")
 screech = Move.new("Screech", 0, "Normal")
 splash = Move.new("Splash", 0, "Water")
 
+#Defines Pokemon class
 class Pokemon 
     attr_accessor :hp 
     attr_reader :max_hp, :name, :move1, :move2, :move3, :move4
 
+    #Defines empty array of pokemon to be filled as each pokemon instance is initialized
     @pokemon = []
 
     def initialize (name, type, attack, hp, move1, move2, move3, move4)
@@ -30,16 +34,25 @@ class Pokemon
         @max_hp = hp
         @name = name 
         @type = type
+
+
+        #TODO: refactor moves to be an array instead of four individual variables
         @move1 = move1
         @move2 = move2
         @move3 = move3
         @move4 = move4
         
+        #Pushes self to pokemon array above
         self.class.pokemon.push(self)
     end
 
     def attack(opponent, move)
-        damage = rand(1..10) * move.damage
+     
+        #TODO: Incorporate pokemon stats & unique moves into the damage system.
+        #TODO: Incorporate pokemon types into the damage system
+        #TODO: Incorporate critical hits into the damage system
+
+        damage = rand 0..10 * move.power
 
         puts "#{@name} used #{move.name}"
 
@@ -60,6 +73,7 @@ class Pokemon
     class << self
         attr_accessor :pokemon
 
+        #Resets the HP of all pokemon that have been instantiated to max HP
         def reset_hp
             @pokemon.each do |pokemon|
                 pokemon.hp = pokemon.max_hp
@@ -73,14 +87,30 @@ def display_stats(user,opponent)
     puts "#{opponent.name} has #{opponent.hp} health"
 end
 
+#Instantiates all moves to be used by pokemon
+#TODO: Create unique moves for each pokemon
+tackle = Move.new("tackle", 1, "Normal")
+electric_shock = Move.new("Electric Shock", 3, "Electric")
+growl = Move.new("Growl", 0, "Normal")
+body_slam = Move.new("Body Slam", 2, "Normal")
 
+#Instantiates all pokemon to be used in the game
+#TODO: Give each pokemon meaningful stats and unique moves.
 pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 18, tackle, electric_shock, growl, body_slam)
 magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 23, pound, splash, screech, body_slam)
 bulbasaur = Pokemon.new("Bulbasaur", "Grass", rand(1..10), 20, tackle, leaf_blade, growl, body_slam)
+mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100, tackle, electric_shock, growl, body_slam)
+charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50, tackle, electric_shock, growl, body_slam)
 
+def enter_continue
+    puts "<Press enter to continue>"
+    continue = gets
+end
 
 playing = true
 while playing
+
+    #TODO: Create classification(PG13) warning for any users under the age of 12. 
 
     Pokemon.reset_hp
     system("clear")
@@ -100,19 +130,22 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
 
     
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
-    puts "<Press enter to continue>"
-    continue = gets
+    enter_continue
 
     choosing = true
     while choosing
         system("clear")
 
-        puts "Please choose one of the Pokemon: \n"
+        puts "Please choose a pokemon."
+        puts "Options:"
+        
         Pokemon.pokemon.to_a.each do |pokemon|
-            puts "- #{pokemon.name}" 
-        end 
-
-        puts "\nYou choose: "
+            if pokemon.name != "Mewtwo" && pokemon.name != Pokemon.pokemon[Pokemon.pokemon.length-1].name
+                print "#{pokemon.name}, "
+            elsif pokemon.name == Pokemon.pokemon[Pokemon.pokemon.length-1].name
+                print "or #{pokemon.name}.\n"
+            end
+        end
 
         user_choice = gets.chomp.capitalize
         if user_choice == "Pikachu"
@@ -136,38 +169,44 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "#{user_choice}, I choose you!"
     puts "Your opponent is #{opponent.name}"
 
-    puts "<Press enter to continue>"
-    continue = gets
+    enter_continue
 
     #Start fighting loop
     fighting = true
     while fighting 
         system("clear")
+
         display_stats(user,opponent)
+
+        #TODO: Create a move user friendly display for stats/pokemon
+        #TODO: Give user the option of choosing their attack move
         puts "Would you like to attack again? (Y)es or (N)o"
+
         fight_input = gets.chomp
         if fight_input == "y"
+
             user.attack(opponent, user.move1)
+
             if opponent.hp <= 0 
                 fighting = false 
             end 
 
-            puts "<Press enter to continue>"
-            continue = gets
-            
+            enter_continue
+            #TODO: Opponent uses random attack instead of set.
+
             opponent.attack(user, opponent.move1)
 
-            puts "<Press enter to continue>"
-            continue = gets
+            enter_continue
 
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end 
         elsif fight_input == "n"
+
             opponent.attack(user, opponent.move1)
-            puts "<Press enter to continue>"
-            continue = gets
-            if user.hp <= 0 || opponent.hp <= 0 
+            enter_continue
+
+          if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end    
         end
