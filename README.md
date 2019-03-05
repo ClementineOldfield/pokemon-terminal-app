@@ -43,23 +43,53 @@ Project Plan & Timeline
 
 With such a short time to complete this project, our timeline had to be condensed. 
 
-### Day 1 (Day 1 was technically only a half day as we were given our design brief in the afternoon. )
+### Day 1 
+(Day 1 was technically only a half day as we were given our design brief in the afternoon. )
 
 - Brainstorming and Ideation. 
 - Narrow down to three ideas. Explore each of the three ideas in more depth. Decide on a final idea & get green lit.
 
-Day 2
-----
+### Day 2
 
 - Create user workflow diagram
 - Write basic pseudocode
+- Start app development if time permits
 
-Day 3
----
+### Day 3
+
 - App development.
 - Adjusting scope of app to meet deadline.
 
-Design & Planning Process: 
+Exploring Ideas
+================
+
+Nutrition tracker mind map. Handdrawn or digital drawing
+
+<!-- app User/Workflow diagram -->
+
+3 user stories each. 
+
+<!-- Project plan & timeline -->
+
+
+
+<!-- Screenshots of Trello board(s) -->
+
+User Workflow Diagram
+=======
+
+![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
+
+Shaahil: 3 user stories
+<!-- Project plan & timeline -->
+
+<!-- Screenshots of Trello board(s) -->
+
+
+<!-- Evidence of app idea brainstorming sessions -->
+
+
+Final Idea: Design & Planning Process: 
 =======
 
 To begin writing the code for our app, we sketched out some quick pseudocode. We knew we would need at least one class (for the pokemon objects) and two loops. One loop to begin the game itself, and one loop to begin the fight. 
@@ -149,33 +179,6 @@ Explain different systems and how they were planned.
 <!-- Evidence of app idea brainstorming sessions -->
 Shaaahil: Maze game mind map. details and design 
 <!-- app User/Workflow diagram -->
-User Workflow Diagram
-=======
-
-![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
-
-Shaahil: 3 user stories
-<!-- Project plan & timeline -->
-
-<!-- Screenshots of Trello board(s) -->
-
-
-<!-- Evidence of app idea brainstorming sessions -->
-
-Exploring Ideas
-================
-
-Nutrition tracker mind map. Handdrawn or digital drawing
-
-<!-- app User/Workflow diagram -->
-
-3 user stories each. 
-
-<!-- Project plan & timeline -->
-
-
-
-<!-- Screenshots of Trello board(s) -->
 
 
 Societal Impact
