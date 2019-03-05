@@ -9,10 +9,14 @@ class Move
     end
 end
 
-tackle = Move.new("tackle", 1, "Normal")
-electric_shock = Move.new("Electric Shock", 3, "Electric")
+tackle = Move.new("tackle", rand(1..3), "Normal")
+electric_shock = Move.new("Electric Shock", rand(2..4), "Electric")
 growl = Move.new("Growl", 0, "Normal")
-body_slam = Move.new("Body Slam", 2, "Normal")
+body_slam = Move.new("Body Slam", rand(1..5), "Normal")
+pound = Move.new("Pound", rand(1..4), "Normal")
+leaf_blade = Move.new("Leaf Balde", rand(2..6), "Grass")
+screech = Move.new("Screech", 0, "Normal")
+splash = Move.new("Splash", 0, "Water")
 
 class Pokemon 
     attr_accessor :hp 
@@ -35,12 +39,11 @@ class Pokemon
     end
 
     def attack(opponent, move)
-        damage = rand 0..10 * move.damage
+        damage = rand(1..10) * move.damage
 
         puts "#{@name} used #{move.name}"
 
         if damage >= 8 
-            puts "#{@name} used "
             puts "Critical hit! #{opponent.name} took #{damage} damage."
         elsif damage <= 2 && damage >= 1
             puts "Not very effective. #{opponent.name} took #{damage} damage."
@@ -71,10 +74,9 @@ def display_stats(user,opponent)
 end
 
 
-pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
-magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 20, tackle, electric_shock, growl, body_slam)
-charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50, tackle, electric_shock, growl, body_slam)
-mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100, tackle, electric_shock, growl, body_slam)
+pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 18, tackle, electric_shock, growl, body_slam)
+magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 23, pound, splash, screech, body_slam)
+bulbasaur = Pokemon.new("Bulbasaur", "Grass", rand(1..10), 20, tackle, leaf_blade, growl, body_slam)
 
 
 playing = true
@@ -105,30 +107,26 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     while choosing
         system("clear")
 
-        puts "Please choose a pokemon. \nFor options, type 'options'"
+        puts "Please choose one of the Pokemon: \n"
+        Pokemon.pokemon.to_a.each do |pokemon|
+            puts "- #{pokemon.name}" 
+        end 
+
+        puts "\nYou choose: "
 
         user_choice = gets.chomp.capitalize
         if user_choice == "Pikachu"
             user = pikachu
-            opponent = magikarp
+            opponent = bulbasaur
             choosing = false 
         elsif user_choice == "Magikarp"
             user = magikarp
             opponent = pikachu
             choosing = false 
-        elsif user_choice == "Charizard"
-            user = charizard
-            opponent = mewtwo
+        elsif user_choice == "Bulbasaur"
+            user = bulbasaur
+            opponent = magikarp
             choosing = false
-        elsif user_choice == "Options"
-            puts "Options:"
-            Pokemon.pokemon.to_a.each do |pokemon|
-                unless pokemon.name == "Mewtwo"
-                    puts pokemon.name
-                end
-            end
-            puts "<press enter to continue>"
-        continue = gets
         else 
             puts "That's not a valid option"
         end
@@ -146,7 +144,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     while fighting 
         system("clear")
         display_stats(user,opponent)
-        puts "Attack? y/n"
+        puts "Would you like to attack again? (Y)es or (N)o"
         fight_input = gets.chomp
         if fight_input == "y"
             user.attack(opponent, user.move1)
@@ -157,7 +155,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
             puts "<Press enter to continue>"
             continue = gets
             
-            opponent.attack(user, user.move1)
+            opponent.attack(user, opponent.move1)
 
             puts "<Press enter to continue>"
             continue = gets
@@ -166,7 +164,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
                 fighting = false
             end 
         elsif fight_input == "n"
-            opponent.attack(user, user.move1)
+            opponent.attack(user, opponent.move1)
             puts "<Press enter to continue>"
             continue = gets
             if user.hp <= 0 || opponent.hp <= 0 
