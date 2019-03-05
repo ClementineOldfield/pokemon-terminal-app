@@ -41,7 +41,7 @@ Shaahil:
 Design & Planning Process: 
 =======
 
-To begin writing the code for our app, we sketched out some quick pseudocode. We knew we would need at least one class and two loops. One loop to begin the game itself, and one loop to begin the fight. 
+To begin writing the code for our app, we sketched out some quick pseudocode. We knew we would need at least one class (for the pokemon objects) and two loops. One loop to begin the game itself, and one loop to begin the fight. 
 
     Create 'Pokemon' class {
 
@@ -50,10 +50,12 @@ To begin writing the code for our app, we sketched out some quick pseudocode. We
 
         method: attack(opponent, move)
 
-        stretch - method: use_item(item)
+        stretch goal - method: use_item(item)
 
-        stretch - method: level_up
+        stretch goal - method: level_up
     }
+
+We had a few core functionality goals that were to be the primary objectives. And we added stretch goals that we would incorporate if time allowed.
 
     variable: playing
 
@@ -88,7 +90,7 @@ To begin writing the code for our app, we sketched out some quick pseudocode. We
 
             }
 
-            stretch: elsif player uses item {
+            stretch goal: elsif player uses item {
 
                 add points to user.pokemon's hp
             }
@@ -120,7 +122,7 @@ To begin writing the code for our app, we sketched out some quick pseudocode. We
 
     }
 
-    stretch - Write data to txt files
+    stretch goal - Write data to txt files to save progress
 
 Explain different systems and how they were planned. 
 <!-- Evidence of app idea brainstorming sessions -->
@@ -138,9 +140,11 @@ Project Plan & Timeline
 
 With such a short time to complete this project, our timeline had to be condensed. 
 
-Day 1
+Day 1 (Day 1 was technically only a half day as we were given our design brief in the afternoon. )
 ----
-Brainstorming and Ideation. Day 1 was technically only a half day as we were given our design brief in the afternoon. 
+- Brainstorming and Ideation. 
+
+- Narrow down to three ideas. Explore each of the three ideas in more depth. Decide on a final idea get approval.
 
 Day 2
 ----
