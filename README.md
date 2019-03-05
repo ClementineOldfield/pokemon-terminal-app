@@ -43,21 +43,84 @@ Design & Planning Process:
 
 To begin writing the code for our app, we sketched out some quick pseudocode. We knew we would need at least one class and two loops. One loop to begin the game itself, and one loop to begin the fight. 
 
-Create 'Pokemon' class {
+    Create 'Pokemon' class {
 
-    core attributes: name, type, hp, moves
-    stretch attributes: level, attack, defence, pp, speed, inventory
+        core attributes: name, type, hp, moves
+        stretch attributes: level, attack, defence, pp, speed, inventory
 
-    method: attack(opponent, move)
+        method: attack(opponent, move)
 
-    stretch - method: use_item(item)
+        stretch - method: use_item(item)
 
-    stretch - method: level_up
-}
+        stretch - method: level_up
+    }
+
+    variable: playing
+
+    Loop: While playing is true {
+
+        stretch - Start music
+
+        Ask user to choose a pokemon
+
+        assign choice to user/fighter
+        assign opposite to opponent
+
+        Stretch goal: create multiple levels of opponent. (eg. really difficult - mewtwo)
+
+        variable: fighting
+
+        Loop: while fighting is true {
+
+            stretch - Start battle music
+
+            Clear screen
+
+            Display own pokemon & opponent pokemon stats.
+            stretch TODO: Create graphic display with ASCII
+
+            Give option/s available to player
+
+            If player attacks {
+
+                Figure out math for damage to opponent/s health
+                Apply damage to opponent's health
+
+            }
+
+            stretch: elsif player uses item {
+
+                add points to user.pokemon's hp
+            }
+
+            Press any button to continue. 
+
+            Opponent attacks automatically. 
+            Figure out math for damage to opponent/s health
+            Apply damage to user's health
+
+            if user hp OR opponent hp <= 0, fighting is no longer true
+        }
+
+        If user hp > 0
+            You win!
+        else
+            Game over!
+        end
+
+        stretch: apply experience to winning pokemon
+        if experience is more than threshold, level up pokemon
 
 
-Pseudocode of program 
+        Ask "would you like to play again?"
 
+        if no 
+            playing = false
+        end
+
+    }
+
+    stretch - Write data to txt files
 
 Explain different systems and how they were planned. 
 <!-- Evidence of app idea brainstorming sessions -->
