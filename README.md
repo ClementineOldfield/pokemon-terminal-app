@@ -9,7 +9,14 @@ https://github.com/ClementineOldfield/pokemon-terminal-app
 Purpose -->
 The purpose of the program is to simulate a battle between pokemon until one loses by reaching zero health after loops of attacks from victorious opponent. 
 <!-- Functionality -->
+
+User stories:
+
+As a user, I am able to choose a pokemon and take part in battles with other pokemon.
+stretch: As a user, I am able to save my progress and have my pokemon gain experience from battles
+
 Its function is to have objects with values assigned to them and those values decreasing through each loop by the other object till eventually one object meets the conditions. 
+
 <!-- Instructions for use -->
 Shaahil: 
 =======
@@ -34,6 +41,7 @@ Clem:
 <!-- Evidence of app idea brainstorming sessions -->
 
 Clem: nutrition tracker mind map. Handdrawn or digital drawing
+=======
 
 
 <!-- app User/Workflow diagram -->
@@ -43,6 +51,8 @@ Clem: nutrition tracker mind map. Handdrawn or digital drawing
 <!-- Project plan & timeline -->
 
 Clem: project plan & timeline. 
+=======
+
 
 
 <!-- Screenshots of Trello board(s) -->
