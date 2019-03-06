@@ -229,7 +229,7 @@ To optimise accessibility, our entire app is usable with a keyboard. We also cho
 Societal Impact & Possible Harm
 ===============
 
-Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. There would be a rating and a warning displayed upon launching the game. In this version we did not have the time to implement this feature.
+Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. There would be a rating and a warning displayed upon launching the game. In this version we only had time to implement a very basic version of this feature.
 
 There are some concerns of Pokemon being likened to promoting animal cruelty. As in the original version, we were sure to specify that the Pokemon "fainted" rather than was actually injured in any way. Although this does not mitigate the above concern entirely, it lessens the amount of violence potentially depicted in the final game.
 
@@ -270,3 +270,6 @@ Testing
 We kept a record of our bug testing in a spreadsheet (included in /docs/ and pictured below)
 
 ![Testing Database](/docs/Testing.png "Testing Database")
+
+
+# Thank you for reading!
