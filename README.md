@@ -51,7 +51,7 @@ After this, we narrowed it down to three ideas:
 
 We drew some mindmaps to explore the pros and cons of each option. 
 
-![Nutrition App Mindmap](/docs/nutrition-app-mindmap.png "Nutrition App Mindmap")
+![Nutrition App Mindmap](/docs/nutrition-mindmap.png "Nutrition App Mindmap")
 
 
 ### Winning choice: Pokemon Battle App
