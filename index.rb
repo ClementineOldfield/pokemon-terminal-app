@@ -170,6 +170,7 @@ while playing
             choosing = false
         else
             puts "That's not a valid option"
+            enter_continue
         end
     end 
 
@@ -224,11 +225,6 @@ while playing
 
             user.attack(opponent, user_move)
 
-            enter_continue
-
-            opponent_move = opponent.moves[rand 0..3]
-            opponent.attack(user, opponent_move)
-        
             enter_continue
 
             if opponent.hp <= 0
