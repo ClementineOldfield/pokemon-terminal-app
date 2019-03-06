@@ -83,8 +83,25 @@ Its function is to have objects with values assigned to them and those values de
 <!-- Instructions for use -->
 Instructions for use: 
 =======
-
-Shaahil: Instructions for use
+1. Find title screen. 
+2. Press enter to continue program.
+3. Identify Pokemon options. 
+4. Type desired Pokemon options from options displayed. 
+5. Press enter to confirm user Pokemon. 
+6. Identify user Pokemon and opponent pokemon. 
+7. Press enter to continue program.
+8. Identify health of user Pokemon and opponent Pokemon.
+9. Identify action options. 
+10. Type "y" to attack or "n" to not attack. 
+11. Identify attack and damage to user Pokemon health. 
+12. Press enter to continue program.
+13. Identify attack and damage to opponent Pokemon health.  
+14. Press enter to continue program.
+15. Identify health of both user Pokemon and opponent Pokemon. 
+16. Repeat steps 9 to 15 till user Pokemon or opponent Pokemon health reach less than or equal 0
+17. Identify result. 
+18. Identify play options. 
+19. Type "y" to play again or "n" to end program.
 
 <!-- Screenshots -->
 Shaahil: 
