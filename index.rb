@@ -115,13 +115,13 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
 end
 
-def start_music(song)
-    pid = fork{ exec 'afplay', song }
-end
+# def start_music(song)
+#     pid = fork{ exec 'afplay', song }
+# end
 
-def stop_music
-    pid = fork{ exec 'killall afplay'}
-end
+# def stop_music
+#     pid = fork{ exec 'killall afplay'}
+# end
 
 playing = true
 while playing
@@ -129,7 +129,7 @@ while playing
     #TODO: Create classification(PG13) warning for any users under the age of 12. 
     Pokemon.reset_hp
     system("clear")
-    start_music("docs/battle-music.mp3")
+    # start_music("docs/battle-music.mp3")
     pokemon_logo
     enter_continue
 
@@ -162,6 +162,10 @@ while playing
             user = bulbasaur
             opponent = magikarp
             choosing = false
+        elsif user_choice == "Charizard"
+            user = charizard
+            opponent = mewtwo
+            choosing = false
         else 
             puts "That's not a valid option"
         end
@@ -184,7 +188,7 @@ while playing
         #TODO: Create a move user friendly display for stats/pokemon
         #TODO: Give user the option of choosing their attack move
         
-        # if fight_input == "y"
+        
         puts "Would you like to attack? (Y)es or (N)o"
         choice = gets.chomp
         if  choice == "y"
@@ -209,6 +213,7 @@ while playing
                     user_move = user.moves[3]
                     choosing = false
                 else
+                    
                     puts "that is not a valid input"
                     enter_continue
                 end
@@ -216,6 +221,11 @@ while playing
         
 
             user.attack(opponent, user_move)
+
+            enter_continue
+
+            opponent_move = opponent.moves[rand 0..3]
+            opponent.attack(user, opponent_move)
         
             enter_continue
 
@@ -241,7 +251,6 @@ while playing
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end
-            
         end
 
     end 
@@ -264,4 +273,4 @@ while playing
 end #End playing loop
 
 
-stop_music
+# stop_music
