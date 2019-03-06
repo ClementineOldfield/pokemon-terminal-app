@@ -89,10 +89,11 @@ User Stories
 =======
 
 Some example user stories...
-As a user, I am able to choose a pokemon and take part in battles with other pokemon.
-As a user, I am able to play multiple games in one session.
-As a user, I am able to use the different moves available to my chosen pokemon.
-stretch: As a user, I am able to save my progress and have my pokemon gain experience from battles
+
+- As a user, I am able to choose a pokemon and take part in battles with other pokemon.
+- As a user, I am able to play multiple games in one session.
+- As a user, I am able to use the different moves available to my chosen pokemon.
+- stretch: As a user, I am able to save my progress and have my pokemon gain experience from battles
 
 
 <!-- Instructions for use -->
