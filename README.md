@@ -84,22 +84,16 @@ User Workflow Diagram
 
 ![User Workflow Diagram](/docs/user-flow-diagram.png "User Workflow Diagram")
 
-<!-- Project plan & timeline -->
 
-<!-- Screenshots of Trello board(s) -->
-
-
-<!-- Evidence of app idea brainstorming sessions -->
-
-
-App Functionality
+User Stories
 =======
-User stories:
 
+Some example user stories...
 As a user, I am able to choose a pokemon and take part in battles with other pokemon.
+As a user, I am able to play multiple games in one session.
+As a user, I am able to use the different moves available to my chosen pokemon.
 stretch: As a user, I am able to save my progress and have my pokemon gain experience from battles
 
-Its function is to have objects with values assigned to them and those values decreasing through each loop by the other object till eventually one object meets the conditions. 
 
 <!-- Instructions for use -->
 Instructions for use: 
