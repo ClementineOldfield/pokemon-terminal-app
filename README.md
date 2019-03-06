@@ -61,7 +61,7 @@ Our aim was to create a fun battle game that was quick and easy to play. It woul
 
 
 ## Core
-- Option to choose a Pokemon from a list
+- Option to choose a Pokemon from a list  
 - Option to choose a move from a unique list for each Pokemon
 - HP stats for the user and the opponent that decrease with each attack
 - Option for the user to play again after the battle has finished
@@ -83,7 +83,6 @@ User Workflow Diagram
 
 ![User Workflow Diagram](/docs/user-flow-diagram.png "User Workflow Diagram")
 
-Shaahil: 3 user stories
 <!-- Project plan & timeline -->
 
 <!-- Screenshots of Trello board(s) -->
