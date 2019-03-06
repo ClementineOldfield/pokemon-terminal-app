@@ -1,5 +1,5 @@
-Terminal App (A1-1).
-========
+#Terminal App (A1-1).
+
 By Clementine Oldfield & Shaahil Chand. February, 2019.
 -----
 
@@ -198,3 +198,12 @@ Added Features
 
 #### Music
 We decided to add music to the gameplay in order to make the user experience (and also our presentation) more engaging. The simplest way we could find to do this was to use the inbuild `afplay` method in macosx terminal. Moving forward, we would ideally like to integrate this with other platforms also. 
+
+We attempted to incorporate two different tracks: One for the general game music and one that was triggered when a fight started but it seemed as though we would need a more sophistocated system in order to acheive this. 
+
+Dropped Features 
+===============
+## (in this version)
+
+### Types
+We included the attribute of 'type' for each pokemon in order for some types to have advantages over others. To implement this, we will need to 
