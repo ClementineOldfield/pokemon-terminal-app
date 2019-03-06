@@ -255,3 +255,11 @@ Dropped Features
 
 ### Types
 We included the attribute of 'type' for each pokemon in order for some types to have advantages over others. To implement this, we will need to 
+
+
+Testing
+=====
+
+We kept a record of our bug testing in a spreadsheet (included in /docs/ and pictured below)
+
+![Testing Database](/docs/testing.png "Testing Database")
