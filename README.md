@@ -216,6 +216,10 @@ Project Management
 ======
 To communicate throughout the project, we used Slack for direct communication and Trello to delegate and keep track of tasks. 
 
+![Slack screenshot #1](/docs/slack1.png "Slack screenshot #1")
+![Slack screenshot #2](/docs/slack2.png "Slack screenshot #2")
+![Slack screenshot #3](/docs/slack3.png "Slack screenshot #3")
+
 
 Accessibility
 ======
