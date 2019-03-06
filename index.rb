@@ -45,10 +45,11 @@ class Pokemon
 
     def attack(opponent, move)
      
-        #TODO: Incorporate pokemon stats & unique moves into the damage system.
         #TODO: Incorporate pokemon types into the damage system
         #TODO: Incorporate critical hits into the damage system
 
+        #The code below multipies an element of randomness with the attack stats of the pokemon and the power stats of the move chosen.
+        #This makes 
         damage = rand(1..3) * move.power * @attack
 
         puts "#{@name} used #{move.name}"
@@ -73,6 +74,7 @@ class Pokemon
         attr_accessor :pokemon
 
         #Resets the HP of all pokemon that have been instantiated to max HP
+        #This is called before any battle commences.
         def reset_hp
             @pokemon.each do |pokemon|
                 pokemon.hp = pokemon.max_hp
@@ -117,6 +119,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
 end
 
+# 
 def start_music(song)
     pid = fork{ exec 'afplay', song }
 end
@@ -200,6 +203,9 @@ while playing
 
                 puts "Which move would you like to use? Your options are: \n1: #{user.moves[0].name} 2: #{user.moves[1].name} \n3: #{user.moves[2].name} 4: #{user.moves[3].name}"
                 fight_input = gets.chomp
+
+                # To give the user the option of typing the number of the move OR the name of the move, the code below compares the input to the name of the 
+                # move the pokemon.move array, by first ensuring that they are in the same case.
                 if fight_input == "1" || fight_input.split.map(&:capitalize).join(' ') == user.moves[0].name
                     user_move = user.moves[0]
                     choosing = false

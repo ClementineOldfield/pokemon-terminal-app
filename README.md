@@ -15,11 +15,6 @@ Design Brief
     In groups of 2 create a Ruby terminal application (app).
     It can be something to entertain, to surprise, to solve a problem, to inform, to compute, etc.
 
-<!-- Description of the app, including:
-Purpose -->
-The purpose of the program is to simulate a battle between pokemon until one loses by reaching zero health after loops of attacks from victorious opponent. 
-<!-- Functionality -->
-
 Project Plan & Timeline
 =======
 
@@ -230,9 +225,18 @@ Explain different systems and how they were planned.
 Societal Impact
 ===============
 
-Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. 
+Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. There would be a rating and a warning displayed upon launching the game. In this version we did not have the time to implement this feature.
 
-To implement this, there would be a rating displayed upon launching the game.
+There are some concerns of Pokemon being likened to promoting animal cruelty. As in the original version, we were sure to specify that the Pokemon "fainted" rather than was actually injured in any way. Although this does not mitigate the above concern entirely, it lessens the amount of violence depicted in the final game.
+
+Obstacles and Problem Solving
+=======
+
+Here is the method that we used to calculate damage within the Pokemon class for each attack made.  
+    
+    damage = rand(1..3) * move.power * @attack
+
+The code takes an element of randomness and multiplies it by the attack stat of the Pokemon and the power stat of the move. This makes some Pokemon (and some moves) stronger than others.
 
 
 Added Features
