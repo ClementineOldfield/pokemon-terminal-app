@@ -262,4 +262,4 @@ Testing
 
 We kept a record of our bug testing in a spreadsheet (included in /docs/ and pictured below)
 
-![Testing Database](/docs/testing.png "Testing Database")
+![Testing Database](/docs/Testing.png "Testing Database")
