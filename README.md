@@ -42,7 +42,16 @@ Exploring Ideas
 ================
 
 We started off by brainstorming with a board on Trello
-![Brainstorming SEssion](/docs/brainstorming.png "Trello Brainstorming Session")
+![Brainstorming Session](/docs/brainstorming.png "Trello Brainstorming Session")
+
+After this, we narrowed it down to three ideas:
+- Scissors, Paper, Rock game
+- Nutrition Tracking App
+- Pokemon Battle Game
+
+We drew some mindmaps to explore the pros and cons of each option. 
+
+
 
 
 Planned Features
