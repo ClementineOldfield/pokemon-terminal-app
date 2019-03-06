@@ -227,7 +227,8 @@ while playing
                 fighting = false
             end 
         else choice == "n"
-        opponent.attack(user, opponent.move1)
+        opponent_move = opponent.moves[rand 0..3]
+        opponent.attack(user, opponent_move)
             enter_continue
 
                 if user.hp <= 0 || opponent.hp <= 0 

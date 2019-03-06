@@ -187,4 +187,14 @@ Societal Impact
 
 Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. 
 
-To implement this, there would be a 
+To implement this, there would be a rating displayed upon launching the game, and
+
+
+Added Features
+===============
+
+### Moves
+
+
+#### Music
+We decided to add music to the gameplay in order to make the user experience (and also our presentation) more engaging. The simplest way we could find to do this was to use the inbuild `afplay` method in macosx terminal. Moving forward, we would ideally like to integrate this with other platforms also. 
