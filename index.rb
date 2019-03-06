@@ -13,12 +13,12 @@ end
 
 #Instantiates all moves to be used by pokemon
 #TODO: Create unique moves for each pokemon
-tackle = Move.new("Tackle", 1, "Normal")
-electric_shock = Move.new("Electric Shock", 2, "Electric")
+tackle = Move.new("Tackle", 2, "Normal")
+electric_shock = Move.new("Electric Shock", 4, "Electric")
 growl = Move.new("Growl", 0, "Normal")
-body_slam = Move.new("Body Slam", 2, "Normal")
-pound = Move.new("Pound", 1, "Normal")
-leaf_blade = Move.new("Leaf Blade", 3, "Grass")
+body_slam = Move.new("Body Slam", 3, "Normal")
+pound = Move.new("Pound", 2, "Normal")
+leaf_blade = Move.new("Leaf Blade", 4, "Grass")
 screech = Move.new("Screech", 0, "Normal")
 splash = Move.new("Splash", 0, "Water")
 
@@ -138,6 +138,7 @@ while playing
     while choosing
         system("clear")
 
+        pokemon_logo
         puts "Please choose a Pokemon."
         puts "Options:"
         
@@ -178,6 +179,7 @@ while playing
     while fighting 
         system("clear")
         
+        pokemon_logo
         display_stats(user,opponent)
 
         #TODO: Create a move user friendly display for stats/pokemon
@@ -211,12 +213,12 @@ while playing
 
             user.attack(opponent, user_move)
         
-            if opponent.hp <= 0 
-                fighting = false 
-            end 
-        
             enter_continue
-            #TODO: Opponent uses random attack instead of set.
+
+            if opponent.hp <= 0
+                fighting = false
+                break
+            end
 
             opponent_move = opponent.moves[rand 0..3]
             opponent.attack(user, opponent_move)
@@ -225,30 +227,33 @@ while playing
 
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
-            end 
-        else choice == "n"
-        opponent_move = opponent.moves[rand 0..3]
-        opponent.attack(user, opponent_move)
+            end
+
+        elsif choice == "n"
+            opponent_move = opponent.moves[rand 0..3]
+            opponent.attack(user, opponent_move)
             enter_continue
 
-                if user.hp <= 0 || opponent.hp <= 0 
-                        fighting = false
-                end
+            if user.hp <= 0 || opponent.hp <= 0 
+                fighting = false
+            end
             
         end
 
     end 
 
     if user.hp > 0 && opponent.hp <= 0 
-        p "You win!!!"
+        puts "#{opponent.name} fainted"
+        puts "You win!!!"
     else  
-        p "You lose!!!"
+        puts "#{user.name} fainted"
+        puts "Game Over."
     end
 
     puts "Would you like to play again? y/n"
     play_input = gets.chomp
     if play_input == "n"
-        p "Thank you for playing!"
+        puts "Thank you for playing!"
         playing = false
     end 
     
