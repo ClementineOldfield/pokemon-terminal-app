@@ -36,7 +36,6 @@ class Pokemon
         @type = type
 
         @moves = [move1, move2, move3, move4]
-        #TODO: refactor moves to be an array instead of four individual variables
         
         #Pushes self to pokemon array above
         self.class.pokemon.push(self)
@@ -103,14 +102,7 @@ def enter_continue
     continue = gets
 end
 
-playing = true
-while playing
-
-    #TODO: Create classification(PG13) warning for any users under the age of 12. 
-
-    Pokemon.reset_hp
-    system("clear")
-
+def pokemon_logo
     puts "
     _.----.         ____         ,'  _\   ___    ___     ____      
 _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`. 
@@ -126,6 +118,25 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
 
     
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
+end
+
+def start_music(song)
+    pid = fork{ exec 'afplay', song }
+end
+
+def stop_music
+    pid = fork{ exec 'killall afplay'}
+end
+
+playing = true
+while playing
+
+    #TODO: Create classification(PG13) warning for any users under the age of 12. 
+
+    Pokemon.reset_hp
+    system("clear")
+    start_music("docs/battle-music.mp3")
+    pokemon_logo
     enter_continue
 
     choosing = true
@@ -171,7 +182,7 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     fighting = true
     while fighting 
         system("clear")
-
+        
         display_stats(user,opponent)
 
         #TODO: Create a move user friendly display for stats/pokemon
@@ -241,6 +252,8 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
         p "Thank you for playing!"
         playing = false
     end 
-
+    
 end #End playing loop
 
+
+stop_music
