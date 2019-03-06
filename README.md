@@ -51,6 +51,7 @@ After this, we narrowed it down to three ideas:
 We drew some mindmaps to explore the pros and cons of each option. 
 
 ![Nutrition App Mindmap](/docs/nutrition-mindmap.png "Nutrition App Mindmap")
+![Scissors Paper Rock Mindmap](/docs/scissors-mindmap.png "Scissors Paper Rock Mindmap")
 
 
 ### Winning choice: Pokemon Battle App
@@ -124,12 +125,8 @@ Instructions for use:
 18. Identify play options. 
 19. Type "y" to play again or "n" to end program.
 
-<!-- Screenshots -->
 
-<!-- Details of design & planning process including, -->
-
-
-Final Idea: Design & Planning Process: 
+Planning & Development Process: 
 =======
 
 To begin writing the code for our app, we sketched out some quick pseudocode. We knew we would need at least one class (for the pokemon objects) and two loops. One loop to begin the game itself, and one loop to begin the fight. 
@@ -215,18 +212,22 @@ We had a few core functionality goals that were to be the primary objectives. An
 
     stretch goal - Write data to txt files to save progress
 
-Explain different systems and how they were planned. 
-<!-- Evidence of app idea brainstorming sessions -->
+Project Management
+======
+To communicate throughout the project, we used Slack for direct communication and Trello to delegate and keep track of tasks. 
 
-<!-- app User/Workflow diagram -->
 
+Accessibility
+======
+
+To optimise accessibility, our entire app is usable with a keyboard. We also chose to use white text on a black background to maximise readability. 
 
 Societal Impact
 ===============
 
 Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. There would be a rating and a warning displayed upon launching the game. In this version we did not have the time to implement this feature.
 
-There are some concerns of Pokemon being likened to promoting animal cruelty. As in the original version, we were sure to specify that the Pokemon "fainted" rather than was actually injured in any way. Although this does not mitigate the above concern entirely, it lessens the amount of violence depicted in the final game.
+There are some concerns of Pokemon being likened to promoting animal cruelty. As in the original version, we were sure to specify that the Pokemon "fainted" rather than was actually injured in any way. Although this does not mitigate the above concern entirely, it lessens the amount of violence potentially depicted in the final game.
 
 Obstacles and Problem Solving
 =======
