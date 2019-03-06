@@ -127,7 +127,6 @@ playing = true
 while playing
 
     #TODO: Create classification(PG13) warning for any users under the age of 12. 
-
     Pokemon.reset_hp
     system("clear")
     # start_music("docs/battle-music.mp3")
@@ -184,7 +183,7 @@ while playing
         system("clear")
         
         pokemon_logo
-        display_stats(user,opponent)
+        
 
         #TODO: Create a move user friendly display for stats/pokemon
         #TODO: Give user the option of choosing their attack move
@@ -195,6 +194,10 @@ while playing
         if  choice == "y"
             choosing = true
             while choosing == true
+                system("clear")
+                pokemon_logo
+                display_stats(user,opponent)
+
                 puts "Which move would you like to use? Your options are: \n1: #{user.moves[0].name} 2: #{user.moves[1].name} \n3: #{user.moves[2].name} 4:#{user.moves[3].name}"
                 fight_input = gets.chomp
                 if fight_input == "1"
@@ -212,8 +215,7 @@ while playing
                 else
                     
                     puts "that is not a valid input"
-                    system("clear")
-                    display_stats(user,opponent)
+                    enter_continue
                 end
             end
         
