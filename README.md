@@ -41,13 +41,18 @@ With such a short time to complete this project, our timeline had to be condense
 Exploring Ideas
 ================
 
-Nutrition tracker mind map. Handdrawn or digital drawing
+We started off by brainstorming with a board on Trello
+![Brainstorming Session](/docs/brainstorming.png "Trello Brainstorming Session")
 
-<!-- app User/Workflow diagram -->
+After this, we narrowed it down to three ideas:
+- Scissors, Paper, Rock game
+- Nutrition Tracking App
+- Pokemon Battle Game
 
-3 user stories each. 
+We drew some mindmaps to explore the pros and cons of each option. 
 
-<!-- Project plan & timeline -->
+
+
 
 Planned Features
 =====
@@ -73,7 +78,7 @@ Planned Features
 User Workflow Diagram
 =======
 
-![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
+![User Workflow Diagram](/docs/user-flow-diagram.png "User Workflow Diagram")
 
 <!-- Project plan & timeline -->
 
