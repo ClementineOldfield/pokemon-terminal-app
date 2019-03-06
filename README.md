@@ -226,7 +226,7 @@ Accessibility
 
 To optimise accessibility, our entire app is usable with a keyboard. We also chose to use white text on a black background to maximise readability. 
 
-Societal Impact
+Societal Impact & Possible Harm
 ===============
 
 Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. There would be a rating and a warning displayed upon launching the game. In this version we did not have the time to implement this feature.
