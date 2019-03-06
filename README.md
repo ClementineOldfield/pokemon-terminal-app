@@ -45,22 +45,48 @@ With such a short time to complete this project, our timeline had to be condense
 Exploring Ideas
 ================
 
-Nutrition tracker mind map. Handdrawn or digital drawing
+We started off by brainstorming with a board on Trello
+![Brainstorming Session](/docs/brainstorming.png "Trello Brainstorming Session")
 
-<!-- app User/Workflow diagram -->
+After this, we narrowed it down to three ideas:
+- Scissors, Paper, Rock game
+- Nutrition Tracking App
+- Pokemon Battle Game
 
-3 user stories each. 
+We drew some mindmaps to explore the pros and cons of each option. 
 
-<!-- Project plan & timeline -->
+![Nutrition App Mindmap](/docs/nutrition-mindmap.png "Nutrition App Mindmap")
 
 
+### Winning choice: Pokemon Battle App
+
+We decided to go with the Pokemon app as it was something that we both found engaging and exciting to develop. 
+
+Our aim was to create a fun battle game that was quick and easy to play. It would include features from the 90s version of the game that would add elements of nostalgia.
+
+
+## Core
+- Option to choose a Pokemon from a list
+- Option to choose a move from a unique list for each Pokemon
+- HP stats for the user and the opponent that decrease with each attack
+- Option for the user to play again after the battle has finished
+- For the opponent to attack with a random move from its list of moves each round
+- To have a user friendly graphical display
+
+## Stretch Goals
+- To affect the damage of an attack by:
+    - The move's type vs the opponent Pokemon's type
+    - The attack stats of the attacking pokemon
+    - The defence stats of the defending pokemon
+- To include ASCII sprites to show which Pokemon are currently fighting
+- To include Pokemon battle music
 
 <!-- Screenshots of Trello board(s) -->
 
 User Workflow Diagram
 =======
 
-![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
+![User Workflow Diagram](/docs/user-flow-diagram.png "User Workflow Diagram")
 
 Shaahil: 3 user stories
 <!-- Project plan & timeline -->
