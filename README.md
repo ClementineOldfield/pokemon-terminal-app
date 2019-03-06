@@ -74,7 +74,7 @@ Our aim was to create a fun battle game that was quick and easy to play. It woul
     - The attack stats of the attacking pokemon
     - The defence stats of the defending pokemon
 - To include ASCII sprites to show which Pokemon are currently fighting
-- To include Pokemon battle music
+- Saving the user's progress
 
 <!-- Screenshots of Trello board(s) -->
 
@@ -241,9 +241,6 @@ The code takes an element of randomness and multiplies it by the attack stat of 
 Added Features
 ===============
 
-### Moves
-
-
 #### Music
 We decided to add music to the gameplay in order to make the user experience (and also our presentation) more engaging. The simplest way we could find to do this was to use the inbuild `afplay` method in macosx terminal. Moving forward, we would ideally like to integrate this with other platforms also. 
 
@@ -253,9 +250,14 @@ Dropped Features
 ===============
 ## (in this version)
 
-### Types
-We included the attribute of 'type' for each pokemon in order for some types to have advantages over others. To implement this, we will need to 
+## Saving Progress
+We would have loved to include the functionality of saving the user's progress but the time restrictions simply did not allow us to get that far. 
 
+### Types
+We included the attribute of 'type' for each pokemon in order for some types to have advantages over others. To implement this in future versions, we would need to modify the attack method to consider these factors. 
+
+## ASCII Sprites
+It would have been fun to include ASCII pictures of each of the pokemon on screen as they fight. This is definitely something that we will add to any future version of the app.
 
 Testing
 =====
