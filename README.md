@@ -15,6 +15,10 @@ Design Brief
     In groups of 2 create a Ruby terminal application (app).
     It can be something to entertain, to surprise, to solve a problem, to inform, to compute, etc.
 
+<!-- Description of the app, including:
+Purpose -->
+The purpose of the program is to simulate a battle between pokemon until one loses by reaching zero health after loops of attacks from victorious opponent. 
+<!-- Functionality -->
 
 Project Plan & Timeline
 =======
@@ -49,24 +53,7 @@ Nutrition tracker mind map. Handdrawn or digital drawing
 
 <!-- Project plan & timeline -->
 
-Planned Features
-=====
 
-## Core
-- Option to choose a Pokemon from a list
-- Option to choose a move from a unique list for each Pokemon
-- Option for the user to play again after the battle has finished
-- For the opponent to attack with a random move from its list of moves each round
-- To have a user friendly graphical display
-
-## Stretch Goals
-- To affect the damage of an attack by:
-    - The moves type vs the opponent Pokemon's type
-    - The attack stats of the attacking pokemon
-    - The defence stats of the defending pokemon
-- To include ASCII sprites to show which Pokemon are currently fighting
-- To include Pokemon battle music
-- 
 
 <!-- Screenshots of Trello board(s) -->
 
@@ -75,6 +62,7 @@ User Workflow Diagram
 
 ![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
 
+Shaahil: 3 user stories
 <!-- Project plan & timeline -->
 
 <!-- Screenshots of Trello board(s) -->
@@ -85,9 +73,6 @@ User Workflow Diagram
 
 App Functionality
 =======
-
-The purpose of the program is to simulate a battle between pokemon until one loses by reaching zero health after loops of attacks from victorious opponent. 
-
 User stories:
 
 As a user, I am able to choose a pokemon and take part in battles with other pokemon.
@@ -98,6 +83,7 @@ Its function is to have objects with values assigned to them and those values de
 <!-- Instructions for use -->
 Instructions for use: 
 =======
+
 1. Find title screen. 
 2. Press enter to continue program.
 3. Identify Pokemon options. 
@@ -119,7 +105,7 @@ Instructions for use:
 19. Type "y" to play again or "n" to end program.
 
 <!-- Screenshots -->
-Shaahil: 
+
 <!-- Details of design & planning process including, -->
 
 
@@ -209,10 +195,9 @@ We had a few core functionality goals that were to be the primary objectives. An
 
     stretch goal - Write data to txt files to save progress
 
-
-
+Explain different systems and how they were planned. 
 <!-- Evidence of app idea brainstorming sessions -->
-Shaaahil: Maze game mind map. details and design 
+
 <!-- app User/Workflow diagram -->
 
 
@@ -221,7 +206,7 @@ Societal Impact
 
 Despite its level of separation from reality, according to Australian classifications, the concept of Pokemon often touches on some mild themes and violence. To prevent our app from offending or disturbing any users, we would limit its use to those over the age of 12. 
 
-To implement this, there would be a rating displayed upon launching the game, and
+To implement this, there would be a rating displayed upon launching the game.
 
 
 Added Features

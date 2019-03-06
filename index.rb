@@ -117,13 +117,13 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
 end
 
-# def start_music(song)
-#     pid = fork{ exec 'afplay', song }
-# end
+def start_music(song)
+    pid = fork{ exec 'afplay', song }
+end
 
-# def stop_music
-#     pid = fork{ exec 'killall afplay'}
-# end
+def stop_music
+    pid = fork{ exec 'killall afplay'}
+end
 
 playing = true
 while playing
@@ -131,14 +131,13 @@ while playing
     #TODO: Create classification(PG13) warning for any users under the age of 12. 
     Pokemon.reset_hp
     system("clear")
-    # start_music("docs/battle-music.mp3")
+    start_music("docs/battle-music.mp3")
     pokemon_logo
     enter_continue
 
     choosing = true
     while choosing
         system("clear")
-
         pokemon_logo
         puts "Please choose a Pokemon."
         puts "Options:"
@@ -169,14 +168,14 @@ while playing
             opponent = mewtwo
             choosing = false
         else
-            puts "That's not a valid option"
+            puts "That's not a valid option."
             enter_continue
         end
     end 
 
     #TODO: add conditionals to assign the correct pokemon objects to the user.
     puts "#{user_choice}, I choose you!"
-    puts "Your opponent is #{opponent.name}"
+    puts "Your opponent is #{opponent.name}."
 
     enter_continue
 
@@ -184,9 +183,7 @@ while playing
     fighting = true
     while fighting 
         system("clear")
-        
         pokemon_logo
-        
 
         #TODO: Create a move user friendly display for stats/pokemon
         #TODO: Give user the option of choosing their attack move
@@ -194,7 +191,7 @@ while playing
         display_stats(user, opponent)
         puts "Would you like to attack? (Y)es or (N)o"
         choice = gets.chomp
-        if  choice == "y"
+        if  choice == "y" || choice == "Y"
             choosing = true
             while choosing == true
                 system("clear")
@@ -216,7 +213,7 @@ while playing
                     user_move = user.moves[3]
                     choosing = false
                 else
-                    puts "that is not a valid input"
+                    puts "that is not a valid move."
                     enter_continue
                 end
             end
@@ -240,7 +237,7 @@ while playing
                 fighting = false
             end
 
-        elsif choice == "n"
+        elsif choice == "n" || choice == "N"
             opponent_move = opponent.moves[rand 0..3]
             opponent.attack(user, opponent_move)
             enter_continue
@@ -255,21 +252,31 @@ while playing
     end 
 
     if user.hp > 0 && opponent.hp <= 0 
-        puts "#{opponent.name} fainted"
+        puts "#{opponent.name} fainted."
         puts "You win!!!"
     else  
-        puts "#{user.name} fainted"
+        puts "#{user.name} fainted."
         puts "Game Over."
     end
 
-    puts "Would you like to play again? y/n"
-    play_input = gets.chomp
-    if play_input == "n"
-        puts "Thank you for playing!"
-        playing = false
-    end 
-    
+    choosing = true
+    while choosing == true
+        puts "Would you like to play again? y/n"
+        play_input = gets.chomp.downcase
+        if play_input == "n"
+            puts "Thank you for playing!"
+            choosing = false
+            playing = false
+        elsif play_input = "y"
+            choosing = false
+        elsif  play_input != "n" && play_input != "y"
+            puts "That's an invalid option."
+            enter_continue
+            system("clear")
+            pokemon_logo
+        end 
+    end
 end #End playing loop
 
 
-# stop_music
+stop_music
