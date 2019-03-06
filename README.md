@@ -52,7 +52,11 @@ After this, we narrowed it down to three ideas:
 We drew some mindmaps to explore the pros and cons of each option. 
 
 
+### Winning choice: Pokemon Battle App
 
+We decided to go with the Pokemon app as it was something that we both found engaging and exciting to develop. 
+
+Our aim was to create a fun battle game that was quick and easy to play. It would include features from the 90s version of the game that would add elements of nostalgia.
 
 Planned Features
 =====
@@ -60,18 +64,18 @@ Planned Features
 ## Core
 - Option to choose a Pokemon from a list
 - Option to choose a move from a unique list for each Pokemon
+- HP stats for the user and the opponent that decrease with each attack
 - Option for the user to play again after the battle has finished
 - For the opponent to attack with a random move from its list of moves each round
 - To have a user friendly graphical display
 
 ## Stretch Goals
 - To affect the damage of an attack by:
-    - The moves type vs the opponent Pokemon's type
+    - The move's type vs the opponent Pokemon's type
     - The attack stats of the attacking pokemon
     - The defence stats of the defending pokemon
 - To include ASCII sprites to show which Pokemon are currently fighting
 - To include Pokemon battle music
-- 
 
 <!-- Screenshots of Trello board(s) -->
 
