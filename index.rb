@@ -49,7 +49,7 @@ class Pokemon
         #TODO: Incorporate pokemon types into the damage system
         #TODO: Incorporate critical hits into the damage system
 
-        damage = rand(1..3) * move.power
+        damage = rand(1..3) * move.power * @attack
 
         puts "#{@name} used #{move.name}"
 
@@ -64,6 +64,8 @@ class Pokemon
         end
         opponent.hp = opponent.hp - damage
         puts "#{opponent.name} has #{opponent.hp} / #{opponent.max_hp} HP"
+
+        #TODO: Add the option for a move to miss
         
     end
 
@@ -86,11 +88,11 @@ end
 
 #Instantiates all pokemon to be used in the game
 #TODO: Give each pokemon meaningful stats and unique moves.
-pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 30, tackle, electric_shock, growl, body_slam)
-magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 34, splash, splash, splash, splash)
-bulbasaur = Pokemon.new("Bulbasaur", "Grass", rand(1..10), 32, tackle, leaf_blade, growl, body_slam)
-mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100, tackle, electric_shock, growl, body_slam)
-charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50, tackle, electric_shock, growl, body_slam)
+pikachu = Pokemon.new("Pikachu", "Electric", 1, 30, tackle, electric_shock, growl, body_slam)
+magikarp = Pokemon.new("Magikarp", "Water", 1, 34, splash, splash, splash, splash)
+bulbasaur = Pokemon.new("Bulbasaur", "Grass", 1, 32, tackle, leaf_blade, growl, body_slam)
+mewtwo = Pokemon.new("Mewtwo", "Psychic", 5, 100, tackle, electric_shock, growl, body_slam)
+charizard = Pokemon.new("Charizard", "Fire", 3, 50, tackle, electric_shock, growl, body_slam)
 
 def enter_continue
     puts "<Press enter to continue>"
@@ -166,7 +168,7 @@ while playing
             user = charizard
             opponent = mewtwo
             choosing = false
-        else 
+        else
             puts "That's not a valid option"
         end
     end 
