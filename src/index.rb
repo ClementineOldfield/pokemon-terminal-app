@@ -138,7 +138,7 @@ while playing
     #TODO: Create classification(PG13) warning for any users under the age of 12. 
     Pokemon.reset_hp
     system("clear")
-    start_music("docs/battle-music.mp3")
+    start_music("assets/battle-music.mp3")
     pokemon_logo
     enter_continue
 
