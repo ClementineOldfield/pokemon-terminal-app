@@ -1,7 +1,8 @@
-#Terminal App (A1-1).
+Terminal App (A1-1).
+=====
 
-By Clementine Oldfield & Shaahil Chand. February, 2019.
------
+###By Clementine Oldfield & Shaahil Chand. February, 2019.
+
 
 <!-- 
 A link to your GitHub repository
