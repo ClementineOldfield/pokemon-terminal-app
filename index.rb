@@ -128,6 +128,10 @@ def stop_music
     pid = fork{ exec 'killall afplay'}
 end
 
+system("clear")
+puts "Warning: This game may not be suitable for those under the age of 12"
+enter_continue
+
 playing = true
 while playing
 
