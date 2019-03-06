@@ -115,13 +115,13 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
 end
 
-def start_music(song)
-    pid = fork{ exec 'afplay', song }
-end
+# def start_music(song)
+#     pid = fork{ exec 'afplay', song }
+# end
 
-def stop_music
-    pid = fork{ exec 'killall afplay'}
-end
+# def stop_music
+#     pid = fork{ exec 'killall afplay'}
+# end
 
 playing = true
 while playing
@@ -130,7 +130,7 @@ while playing
 
     Pokemon.reset_hp
     system("clear")
-    start_music("docs/battle-music.mp3")
+    # start_music("docs/battle-music.mp3")
     pokemon_logo
     enter_continue
 
@@ -162,6 +162,10 @@ while playing
             user = bulbasaur
             opponent = magikarp
             choosing = false
+        elsif user_choice == "Charizard"
+            user = charizard
+            opponent = mewtwo
+            choosing = false
         else 
             puts "That's not a valid option"
         end
@@ -183,7 +187,7 @@ while playing
         #TODO: Create a move user friendly display for stats/pokemon
         #TODO: Give user the option of choosing their attack move
         
-        # if fight_input == "y"
+        
         puts "Would you like to attack? (Y)es or (N)o"
         choice = gets.chomp
         if  choice == "y"
@@ -204,12 +208,20 @@ while playing
                     user_move = user.moves[3]
                     choosing = false
                 else
+                    
                     puts "that is not a valid input"
+                    system("clear")
+                    display_stats(user,opponent)
                 end
             end
         
 
             user.attack(opponent, user_move)
+
+            enter_continue
+
+            opponent_move = opponent.moves[rand 0..3]
+            opponent.attack(user, opponent_move)
         
             if opponent.hp <= 0 
                 fighting = false 
@@ -217,23 +229,18 @@ while playing
         
             enter_continue
             #TODO: Opponent uses random attack instead of set.
-
+        elsif choice == "n"
             opponent_move = opponent.moves[rand 0..3]
             opponent.attack(user, opponent_move)
     
             enter_continue
 
-            if user.hp <= 0 || opponent.hp <= 0 
-                fighting = false
-            end 
-        else choice == "n"
-        opponent.attack(user, opponent.move1)
-            enter_continue
-
                 if user.hp <= 0 || opponent.hp <= 0 
                         fighting = false
                 end
-            
+        else 
+            puts "That's is not a valid input"
+            system("clear")            
         end
 
     end 
@@ -247,11 +254,11 @@ while playing
     puts "Would you like to play again? y/n"
     play_input = gets.chomp
     if play_input == "n"
-        p "Thank you for playing!"
+        puts "Thank you for playing!"
         playing = false
     end 
     
 end #End playing loop
 
 
-stop_music
+# stop_music
