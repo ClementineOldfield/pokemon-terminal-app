@@ -15,10 +15,6 @@ Design Brief
     In groups of 2 create a Ruby terminal application (app).
     It can be something to entertain, to surprise, to solve a problem, to inform, to compute, etc.
 
-<!-- Description of the app, including:
-Purpose -->
-The purpose of the program is to simulate a battle between pokemon until one loses by reaching zero health after loops of attacks from victorious opponent. 
-<!-- Functionality -->
 
 Project Plan & Timeline
 =======
@@ -53,7 +49,24 @@ Nutrition tracker mind map. Handdrawn or digital drawing
 
 <!-- Project plan & timeline -->
 
+Planned Features
+=====
 
+## Core
+- Option to choose a Pokemon from a list
+- Option to choose a move from a unique list for each Pokemon
+- Option for the user to play again after the battle has finished
+- For the opponent to attack with a random move from its list of moves each round
+- To have a user friendly graphical display
+
+## Stretch Goals
+- To affect the damage of an attack by:
+    - The moves type vs the opponent Pokemon's type
+    - The attack stats of the attacking pokemon
+    - The defence stats of the defending pokemon
+- To include ASCII sprites to show which Pokemon are currently fighting
+- To include Pokemon battle music
+- 
 
 <!-- Screenshots of Trello board(s) -->
 
@@ -62,7 +75,6 @@ User Workflow Diagram
 
 ![User Workflow Diagram](/docs/user-flow-diagram.png "Logo Title Text 1")
 
-Shaahil: 3 user stories
 <!-- Project plan & timeline -->
 
 <!-- Screenshots of Trello board(s) -->
@@ -73,6 +85,9 @@ Shaahil: 3 user stories
 
 App Functionality
 =======
+
+The purpose of the program is to simulate a battle between pokemon until one loses by reaching zero health after loops of attacks from victorious opponent. 
+
 User stories:
 
 As a user, I am able to choose a pokemon and take part in battles with other pokemon.
@@ -177,7 +192,8 @@ We had a few core functionality goals that were to be the primary objectives. An
 
     stretch goal - Write data to txt files to save progress
 
-Explain different systems and how they were planned. 
+
+
 <!-- Evidence of app idea brainstorming sessions -->
 Shaaahil: Maze game mind map. details and design 
 <!-- app User/Workflow diagram -->

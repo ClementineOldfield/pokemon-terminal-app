@@ -191,7 +191,7 @@ while playing
         #TODO: Create a move user friendly display for stats/pokemon
         #TODO: Give user the option of choosing their attack move
         
-        
+        display_stats(user, opponent)
         puts "Would you like to attack? (Y)es or (N)o"
         choice = gets.chomp
         if  choice == "y"
@@ -203,16 +203,16 @@ while playing
 
                 puts "Which move would you like to use? Your options are: \n1: #{user.moves[0].name} 2: #{user.moves[1].name} \n3: #{user.moves[2].name} 4:#{user.moves[3].name}"
                 fight_input = gets.chomp
-                if fight_input == "1"
+                if fight_input == "1" || fight_input.split.map(&:capitalize).join(' ') == user.moves[0].name
                     user_move = user.moves[0]
                     choosing = false
-                elsif fight_input == "2"
+                elsif fight_input == "2" || fight_input.split.map(&:capitalize).join(' ') == user.moves[1].name
                     user_move = user.moves[1]
                     choosing = false
-                elsif fight_input == "3"
+                elsif fight_input == "3" || fight_input.split.map(&:capitalize).join(' ') == user.moves[2].name
                     user_move = user.moves[2]
                     choosing = false
-                elsif fight_input == "4"
+                elsif fight_input == "4" || fight_input.split.map(&:capitalize).join(' ') == user.moves[3].name
                     user_move = user.moves[3]
                     choosing = false
                 else
