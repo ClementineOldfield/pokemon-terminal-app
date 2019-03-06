@@ -117,9 +117,9 @@ _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`.
     puts "-----------------------------------------------------------------------\n                                BATTLE \n-----------------------------------------------------------------------"
 end
 
-# def start_music(song)
-#     pid = fork{ exec 'afplay', song }
-# end
+def start_music(song)
+    pid = fork{ exec 'afplay', song }
+end
 
 # def stop_music
 #     pid = fork{ exec 'killall afplay'}
@@ -131,7 +131,7 @@ while playing
     #TODO: Create classification(PG13) warning for any users under the age of 12. 
     Pokemon.reset_hp
     system("clear")
-    # start_music("docs/battle-music.mp3")
+    start_music("docs/battle-music.mp3")
     pokemon_logo
     enter_continue
 
