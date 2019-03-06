@@ -11,12 +11,14 @@ class Move
     end
 end
 
-tackle = Move.new("tackle", rand(1..3), "Normal")
-electric_shock = Move.new("Electric Shock", rand(2..4), "Electric")
+#Instantiates all moves to be used by pokemon
+#TODO: Create unique moves for each pokemon
+tackle = Move.new("Tackle", 1, "Normal")
+electric_shock = Move.new("Electric Shock", 2, "Electric")
 growl = Move.new("Growl", 0, "Normal")
-body_slam = Move.new("Body Slam", rand(1..5), "Normal")
-pound = Move.new("Pound", rand(1..4), "Normal")
-leaf_blade = Move.new("Leaf Blade", rand(2..6), "Grass")
+body_slam = Move.new("Body Slam", 2, "Normal")
+pound = Move.new("Pound", 1, "Normal")
+leaf_blade = Move.new("Leaf Blade", 3, "Grass")
 screech = Move.new("Screech", 0, "Normal")
 splash = Move.new("Splash", 0, "Water")
 
@@ -47,7 +49,7 @@ class Pokemon
         #TODO: Incorporate pokemon types into the damage system
         #TODO: Incorporate critical hits into the damage system
 
-        damage = rand 0..10 * move.power
+        damage = rand(1..3) * move.power
 
         puts "#{@name} used #{move.name}"
 
@@ -82,18 +84,11 @@ def display_stats(user,opponent)
     puts "#{opponent.name} has #{opponent.hp} health"
 end
 
-#Instantiates all moves to be used by pokemon
-#TODO: Create unique moves for each pokemon
-tackle = Move.new("Tackle", 1, "Normal")
-electric_shock = Move.new("Electric Shock", 3, "Electric")
-growl = Move.new("Growl", 0, "Normal")
-body_slam = Move.new("Body Slam", 2, "Normal")
-
 #Instantiates all pokemon to be used in the game
 #TODO: Give each pokemon meaningful stats and unique moves.
-pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 18, tackle, electric_shock, growl, body_slam)
-magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 23, splash, nil, nil, nil)
-bulbasaur = Pokemon.new("Bulbasaur", "Grass", rand(1..10), 20, tackle, leaf_blade, growl, body_slam)
+pikachu = Pokemon.new("Pikachu", "Electric", rand(1..10), 30, tackle, electric_shock, growl, body_slam)
+magikarp = Pokemon.new("Magikarp", "Water", rand(1..10), 34, splash, splash, splash, splash)
+bulbasaur = Pokemon.new("Bulbasaur", "Grass", rand(1..10), 32, tackle, leaf_blade, growl, body_slam)
 mewtwo = Pokemon.new("Mewtwo", "Psychic", rand(150..200), 100, tackle, electric_shock, growl, body_slam)
 charizard = Pokemon.new("Charizard", "Fire", rand(50..100), 50, tackle, electric_shock, growl, body_slam)
 
@@ -143,7 +138,7 @@ while playing
     while choosing
         system("clear")
 
-        puts "Please choose a pokemon."
+        puts "Please choose a Pokemon."
         puts "Options:"
         
         Pokemon.pokemon.to_a.each do |pokemon|
@@ -189,54 +184,57 @@ while playing
         #TODO: Give user the option of choosing their attack move
         
         # if fight_input == "y"
-
-        choosing = true
-        while choosing == true
-            puts "Which move would you like to use? Your options are: \n1: #{user.moves[0].name} 2: #{user.moves[1].name} \n3: #{user.moves[2].name} 4:#{user.moves[3].name}"
-            fight_input = gets.chomp
-            if fight_input == "1"
-                user_move = user.moves[0]
-                choosing = false
-            elsif fight_input == "2"
-                user_move = user.moves[1]
-                choosing = false
-            elsif fight_input == "3"
-                user_move = user.moves[2]
-                choosing = false
-            elsif fight_input == "4"
-                user_move = user.moves[3]
-                choosing = false
-            else
-                puts "that is not a valid input"
+        puts "Would you like to attack? (Y)es or (N)o"
+        choice = gets.chomp
+        if  choice == "y"
+            choosing = true
+            while choosing == true
+                puts "Which move would you like to use? Your options are: \n1: #{user.moves[0].name} 2: #{user.moves[1].name} \n3: #{user.moves[2].name} 4:#{user.moves[3].name}"
+                fight_input = gets.chomp
+                if fight_input == "1"
+                    user_move = user.moves[0]
+                    choosing = false
+                elsif fight_input == "2"
+                    user_move = user.moves[1]
+                    choosing = false
+                elsif fight_input == "3"
+                    user_move = user.moves[2]
+                    choosing = false
+                elsif fight_input == "4"
+                    user_move = user.moves[3]
+                    choosing = false
+                else
+                    puts "that is not a valid input"
+                end
             end
-        end
+        
 
             user.attack(opponent, user_move)
-
+        
             if opponent.hp <= 0 
                 fighting = false 
             end 
-
+        
             enter_continue
             #TODO: Opponent uses random attack instead of set.
 
             opponent_move = opponent.moves[rand 0..3]
             opponent.attack(user, opponent_move)
-
+    
             enter_continue
 
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end 
-        # elsif fight_input == "n"
+        else choice == "n"
+        opponent.attack(user, opponent.move1)
+            enter_continue
 
-        #     opponent.attack(user, opponent.move1)
-        #     enter_continue
-
-        #   if user.hp <= 0 || opponent.hp <= 0 
-        #         fighting = false
-        #     end    
-        # end
+                if user.hp <= 0 || opponent.hp <= 0 
+                        fighting = false
+                end
+            
+        end
 
     end 
 
