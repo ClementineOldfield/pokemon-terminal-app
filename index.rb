@@ -201,7 +201,7 @@ while playing
                 pokemon_logo
                 display_stats(user,opponent)
 
-                puts "Which move would you like to use? Your options are: \n1: #{user.moves[0].name} 2: #{user.moves[1].name} \n3: #{user.moves[2].name} 4:#{user.moves[3].name}"
+                puts "Which move would you like to use? Your options are: \n1: #{user.moves[0].name} 2: #{user.moves[1].name} \n3: #{user.moves[2].name} 4: #{user.moves[3].name}"
                 fight_input = gets.chomp
                 if fight_input == "1" || fight_input.split.map(&:capitalize).join(' ') == user.moves[0].name
                     user_move = user.moves[0]
@@ -216,7 +216,6 @@ while playing
                     user_move = user.moves[3]
                     choosing = false
                 else
-                    
                     puts "that is not a valid input"
                     enter_continue
                 end
@@ -249,6 +248,8 @@ while playing
             if user.hp <= 0 || opponent.hp <= 0 
                 fighting = false
             end
+        else
+            puts "That's an invalid option."
         end
 
     end 
