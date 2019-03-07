@@ -1,14 +1,15 @@
 
 #Defines class for settings for a particular game session
 #Such as controlling the music, player stats etc
-# class Settings
+class Settings
 
-#     # attr_accessor :music_playing
+    attr_accessor :music_playing
 
-#     def initialize
-#     #     @music_playing = false
-#     # end
-# end
+    def initialize
+        @music_playing = false
+    end
+end
+
 
 #Defines class for all moves used by pokemon
 #TODO: Move classes to new files
@@ -38,7 +39,6 @@ splash = Move.new("Splash", 0, "Water")
 #TODO maybe add a username to the game and then store
 #the settings under the name (user)settings
 
-my_settings = Settings.new
 
 #Defines Pokemon class
 class Pokemon 
@@ -135,6 +135,8 @@ def display_stats(user,opponent)
     puts "#{opponent.name} has #{opponent.hp} health"
 end
 
+### Instantiation ###
+
 #Instantiates all pokemon to be used in the game
 #TODO: Give each pokemon meaningful stats and unique moves.
 pikachu = Pokemon.new("Pikachu", "Electric", 1, 30, tackle, electric_shock, growl, body_slam)
@@ -143,12 +145,19 @@ bulbasaur = Pokemon.new("Bulbasaur", "Grass", 1, 32, tackle, leaf_blade, growl, 
 mewtwo = Pokemon.new("Mewtwo", "Psychic", 5, 100, tackle, electric_shock, growl, body_slam)
 charizard = Pokemon.new("Charizard", "Fire", 3, 50, tackle, electric_shock, growl, body_slam)
 
+
+###
+
+
+
+
 def enter_continue
     puts "<Press enter to continue>"
     continue = gets
 end
 
 def pokemon_logo
+
     puts "
     _.----.         ____         ,'  _\   ___    ___     ____      
 _,-'       `.      |    |  /`.   \,-'    |   \\  /   |   |    \\  |`. 
@@ -168,11 +177,8 @@ end
 
 # 
 def start_music(song)
-    # if my_settings.@music_playing == false
         pid = fork{ exec 'afplay', song }
-        # p my_settings
-    # end
-end
+ end
 
 def stop_music
     pid = fork{ exec 'killall afplay'}
@@ -182,14 +188,25 @@ system("clear")
 puts "Warning: This game may not be suitable for those under the age of 12"
 enter_continue
 
+# Settings instantiation
+
+settings = Settings.new
+
+
 playing = true
 while playing
-
+    
     #TODO: Create classification(PG13) warning for any users under the age of 12. 
     Pokemon.reset_hp
     system("clear")
-    start_music("assets/battle-music.mp3")
-    # my_settings.music_playing = true
+    if settings.music_playing == false
+        start_music("assets/battle-music.mp3")
+        settings.music_playing = true
+
+        # pid = fork{ exec 'afplay', song }
+    end
+    
+    p settings.music_playing
     pokemon_logo
     enter_continue
 
