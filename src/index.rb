@@ -1,14 +1,14 @@
 
 #Defines class for settings for a particular game session
 #Such as controlling the music, player stats etc
-class Settings
+# class Settings
 
-    # attr_accessor :music_playing
+#     # attr_accessor :music_playing
 
-    def initialize
-    #     @music_playing = false
-    # end
-end
+#     def initialize
+#     #     @music_playing = false
+#     # end
+# end
 
 #Defines class for all moves used by pokemon
 #TODO: Move classes to new files
@@ -20,13 +20,6 @@ class Move
         @name = name
         @power = power
         @type = type
-        #Lukes code
-
-        # Type bonus starts as 1, and becomes 1.5 if the types are conflicting
-        # Test case ==> Electric > water
-
-        # ALSO if the types are certain combinations, damage = 0.
-        @type_bonus = 0 
     end
 end
 
@@ -103,19 +96,10 @@ class Pokemon
         #TODO: Incorporate critical hits into the damage system
 
         #The code below multipies an element of randomness with the attack stats of the pokemon and the power stats of the move chosen.
-        #This makes
-        damage = rand(1..3) * move.power * @attack #Add something for type here 
-
-
-        
+        #This makes 
+        damage = rand(1..3) * move.power * @attack
 
         puts "#{@name} used #{move.name}"
-
-        # Maybe we could say that the type calculation adds a certain amount of damage?
-
-        ### What do we need to take into account with the damage calculation?
-
-        #move.power * @attack * type_bonus * crit?
 
         if damage >= 8 
             puts "Critical hit! #{opponent.name} took #{damage} damage."
@@ -126,9 +110,6 @@ class Pokemon
         else 
             puts "#{opponent.name} took #{damage} damage."
         end
-
-        #Damage calculation - maybe add crit here?
-
         opponent.hp = opponent.hp - damage
         puts "#{opponent.name} has #{opponent.hp} / #{opponent.max_hp} HP"
 
@@ -189,7 +170,7 @@ end
 def start_music(song)
     # if my_settings.@music_playing == false
         pid = fork{ exec 'afplay', song }
-        p my_settings
+        # p my_settings
     # end
 end
 
