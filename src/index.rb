@@ -8,6 +8,13 @@ class Move
         @name = name
         @power = power
         @type = type
+        #Lukes code
+
+        # Type bonus starts as 1, and becomes 1.5 if the types are conflicting
+        # Test case ==> Electric > water
+
+        # ALSO if the types are certain combinations, damage = 0.
+        @type_bonus = 0 
     end
 end
 
@@ -50,9 +57,17 @@ class Pokemon
 
         #The code below multipies an element of randomness with the attack stats of the pokemon and the power stats of the move chosen.
         #This makes 
-        damage = rand(1..3) * move.power * @attack
+        damage = rand(1..3) * move.power * @attack #Add something for type here 
+
+        
 
         puts "#{@name} used #{move.name}"
+
+        # Maybe we could say that the type calculation adds a certain amount of damage?
+
+        ### What do we need to take into account with the damage calculation?
+
+        #move.power * @attack * type_bonus * crit?
 
         if damage >= 8 
             puts "Critical hit! #{opponent.name} took #{damage} damage."
@@ -63,6 +78,9 @@ class Pokemon
         else 
             puts "#{opponent.name} took #{damage} damage."
         end
+
+        #Damage calculation - maybe add crit here?
+
         opponent.hp = opponent.hp - damage
         puts "#{opponent.name} has #{opponent.hp} / #{opponent.max_hp} HP"
 
