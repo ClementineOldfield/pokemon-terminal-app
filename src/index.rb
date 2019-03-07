@@ -1,6 +1,18 @@
 
+#Defines class for settings for a particular game session
+#Such as controlling the music, player stats etc
+class Settings
+
+    # attr_accessor :music_playing
+
+    def initialize
+    #     @music_playing = false
+    # end
+end
+
 #Defines class for all moves used by pokemon
 #TODO: Move classes to new files
+
 class Move
     attr_accessor :name, :power, :type
 
@@ -29,6 +41,12 @@ leaf_blade = Move.new("Leaf Blade", 4, "Grass")
 screech = Move.new("Screech", 0, "Normal")
 splash = Move.new("Splash", 0, "Water")
 
+#Instantiates settings file
+#TODO maybe add a username to the game and then store
+#the settings under the name (user)settings
+
+my_settings = Settings.new
+
 #Defines Pokemon class
 class Pokemon 
     attr_accessor :hp 
@@ -43,6 +61,7 @@ class Pokemon
         @max_hp = hp
         @name = name 
         @type = type
+        
 
         @moves = [move1, move2, move3, move4]
         
@@ -50,14 +69,43 @@ class Pokemon
         self.class.pokemon.push(self)
     end
 
+    ##Lukes code
+
+    def calculate_types(type1, type2)
+
+        #We need to find a list of all the types and their different results
+
+        #What can they return? Either 'super effective', 'normal', 'not very effective', or 'no effect
+        
+        # Maybe:
+        #   super effective can return +2 (*2 modifier)
+        #   normal returns +1 (*1 modifier)
+        #   not very effective (* 0.5 - half damage)
+        #   no effect returns (*0 - no damage)
+
+        #E.g., electric > water ==> +2
+        #      fire > fire ==> 1
+        #      water > electric ==> 0.5
+        #      electric > rock ==> 0
+
+        if (type1.capitalize == "Electric" && type2.capitalize == "Water")
+            2
+        end
+
+        
+    end
+
+    
+
     def attack(opponent, move)
      
         #TODO: Incorporate pokemon types into the damage system
         #TODO: Incorporate critical hits into the damage system
 
         #The code below multipies an element of randomness with the attack stats of the pokemon and the power stats of the move chosen.
-        #This makes 
+        #This makes
         damage = rand(1..3) * move.power * @attack #Add something for type here 
+
 
         
 
@@ -139,7 +187,10 @@ end
 
 # 
 def start_music(song)
-    pid = fork{ exec 'afplay', song }
+    # if my_settings.@music_playing == false
+        pid = fork{ exec 'afplay', song }
+        p my_settings
+    # end
 end
 
 def stop_music
@@ -157,6 +208,7 @@ while playing
     Pokemon.reset_hp
     system("clear")
     start_music("assets/battle-music.mp3")
+    # my_settings.music_playing = true
     pokemon_logo
     enter_continue
 
@@ -295,7 +347,7 @@ while playing
             puts "Thank you for playing!"
             choosing = false
             playing = false
-        elsif play_input = "y"
+        elsif play_input == "y"
             choosing = false
         elsif  play_input != "n" && play_input != "y"
             puts "That's an invalid option."
@@ -304,7 +356,6 @@ while playing
             pokemon_logo
         end 
     end
-end #End playing loop
-
-
+     #End playing loop
+end
 stop_music
